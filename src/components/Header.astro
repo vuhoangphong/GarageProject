@@ -1,25 +1,24 @@
 <header>
-  <div class="logo">
-    <div class="company-name">
-      <span class="kanji">合同会社</span>
-      <span class="company-main">大繁</span>
+  <a href="/" class="logo-link">
+    <div class="logo">
+      <div class="company-name">
+        <span class="kanji">合同会社</span>
+        <span class="company-main">大繁</span>
+      </div>
+      <div class="company-subtitle">
+        <span class="lang" data-ja="自動車総合サービス" data-vn="Dịch vụ ô tô tổng hợp">自動車総合サービス</span>
+      </div>
     </div>
-    <div class="company-subtitle">
-      <span class="lang" data-ja="自動車総合サービス" data-vn="Dịch vụ ô tô tổng hợp">自動車総合サービス</span>
-    </div>
-  </div>
+  </a>
   <button class="mobile-menu" id="mobileToggle">☰</button>
   <nav id="navigation">
     <a href="#home" class="nav-link">
-      <span class="nav-kanji">🏠</span>
       <span class="nav-text langHeaderSerive" data-ja="ホーム" data-vn="Trang Chủ">ホーム</span>
     </a>
     <a href="#services" class="nav-link">
-      <span class="nav-kanji">⚙️</span>
       <span class="nav-text langHeaderSerive" data-ja="サービス" data-vn="Dịch Vụ">サービス</span>
     </a>
     <a href="#contact" class="nav-link">
-      <span class="nav-kanji">📞</span>
       <span class="nav-text langHeaderSerive" data-ja="お問い合わせ" data-vn="Liên Hệ">お問い合わせ</span>
     </a>
     <button id="toggleLang" class="lang-toggle">
@@ -44,6 +43,16 @@ header {
   justify-content: space-between;
   padding: 15px 20px;
   color: white;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.9;
 }
 
 .logo {
@@ -189,7 +198,9 @@ nav {
   const toggleBtnDesktop = document.getElementById("toggleLangDesktop");
   const mobileToggle = document.getElementById("mobileToggle");
   const navigation = document.getElementById("navigation");
-  let isJP = true;
+  
+  // Get saved language preference or default to Japanese
+  let isJP = localStorage.getItem('language') !== 'vn';
 
   // Language toggle function
   function switchLanguage() {
@@ -200,7 +211,15 @@ nav {
     
     isJP = !isJP;
     
+    // Save language preference
+    localStorage.setItem('language', isJP ? 'jp' : 'vn');
+    
     // Update both mobile and desktop buttons
+    updateLanguageButtons();
+  }
+
+  // Update language buttons
+  function updateLanguageButtons() {
     const flagSrc = isJP ? "/icon_Lang_Japan.png" : "/icon_Lang_VietNam.png";
     const newText = isJP ? "JP" : "VN";
     
@@ -216,6 +235,21 @@ nav {
       }
     });
   }
+
+  // Apply saved language on page load
+  function applySavedLanguage() {
+    if (!isJP) {
+      // Switch to Vietnamese
+      document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
+        const vnText = el.getAttribute("data-vn");
+        if (vnText) el.textContent = vnText;
+      });
+    }
+    updateLanguageButtons();
+  }
+
+  // Initialize language on page load
+  document.addEventListener('DOMContentLoaded', applySavedLanguage);
 
   // Attach language toggle to both buttons
   if (toggleBtn) {
