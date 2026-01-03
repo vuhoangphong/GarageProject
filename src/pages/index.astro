@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Slider from "../components/Slider.astro";
+import Services from "../components/Services.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout>
+  <Header />
+  <Slider />
+  <Services />
+
+  <section class="contact" id="contact">
+    <h2 class="lang" data-ja="お問い合わせ" data-vn="Liên hệ">お問い合わせ</h2>
+    <p class="lang" data-ja="電話: 012-345-6789" data-vn="SĐT: 012-345-6789">電話: 012-345-6789</p>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.9910195016714!2d135.73937337631963!3d34.9568337694258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600105ed77e39069%3A0xaa1606b76966a47!2zTmjhuq10IELhuqNuLCDjgJI2MDEtODE0NSBLeW90bywgTWluYW1pIFdhcmQsIEthbWl0b2JhIE5pc2hpdXJhY2jFjSwg44Ko44Kv44K744Os44Oz44OI77yT77yX77yT!5e0!3m2!1svi!2s!4v1767410445065!5m2!1svi!2s" 
+        width="100%" height="280" style="border:0;" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

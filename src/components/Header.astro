@@ -1,0 +1,87 @@
+<header>
+  <div class="logo">合同会社 大繁</div>
+  <button class="mobile-menu" id="mobileToggle">☰</button>
+  <nav id="navigation">
+    <a href="#home" class="langHeaderSerive" data-ja="ホーム" data-vn="Trang Chủ">ホーム</a>
+    <a href="#services" class="langHeaderSerive" data-ja="サービス" data-vn="Dịch Vụ">サービス</a>
+    <a href="#contact" class="langHeaderSerive" data-ja="お問い合わせ" data-vn="Liên Hệ">お問い合わせ</a>
+    <button id="toggleLang">
+      <img src="/icon_Lang_Japan.png" alt="JP" class="flag-icon" width="16" height="12"> 
+      <span>JP</span>
+    </button>
+  </nav>
+  <button id="toggleLangDesktop">
+    <img src="/icon_Lang_Japan.png" alt="JP" class="flag-icon" width="16" height="12"> 
+    <span>JP</span>
+  </button>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById("toggleLang");
+  const toggleBtnDesktop = document.getElementById("toggleLangDesktop");
+  const mobileToggle = document.getElementById("mobileToggle");
+  const navigation = document.getElementById("navigation");
+  let isJP = true;
+
+  // Language toggle function
+  function switchLanguage() {
+    document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
+      const newText = isJP ? el.getAttribute("data-vn") : el.getAttribute("data-ja");
+      if (newText) el.textContent = newText;
+    });
+    
+    isJP = !isJP;
+    
+    // Update both mobile and desktop buttons
+    const flagSrc = isJP ? "/icon_Lang_Japan.png" : "/icon_Lang_VietNam.png";
+    const newText = isJP ? "JP" : "VN";
+    
+    [toggleBtn, toggleBtnDesktop].forEach(btn => {
+      if (btn) {
+        const flagIcon = btn.querySelector('.flag-icon');
+        const textSpan = btn.querySelector('span');
+        if (flagIcon instanceof HTMLImageElement) {
+          flagIcon.src = flagSrc;
+          flagIcon.alt = newText;
+        }
+        if (textSpan) textSpan.textContent = newText;
+      }
+    });
+  }
+
+  // Attach language toggle to both buttons
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", switchLanguage);
+  }
+  
+  if (toggleBtnDesktop) {
+    toggleBtnDesktop.addEventListener("click", switchLanguage);
+  }
+
+  // Mobile menu toggle
+  if (mobileToggle && navigation) {
+    mobileToggle.addEventListener("click", () => {
+      navigation.classList.toggle("mobile-open");
+      mobileToggle.textContent = navigation.classList.contains("mobile-open") ? "✕" : "☰";
+    });
+
+    // Close mobile menu when clicking nav links
+    navigation.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('mobile-open');
+        mobileToggle.textContent = "☰";
+      });
+    });
+  }
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as Node;
+    if (navigation && mobileToggle && target &&
+        !navigation.contains(target) && 
+        !mobileToggle.contains(target)) {
+      navigation.classList.remove('mobile-open');
+      mobileToggle.textContent = "☰";
+    }
+  });
+</script>

@@ -1,0 +1,21 @@
+{
+  "banner": [
+    "https://picsum.photos/1200/400?1",
+    "https://picsum.photos/1200/400?2",
+    "https://picsum.photos/1200/400?3"
+  ],
+  "services": [
+    {"jp":"メンテナンス","vn":"Bảo Dưỡng","img":"https://picsum.photos/300/200?4"},
+    {"jp":"車検","vn":"Đăng Kiểm","img":"https://picsum.photos/300/200?5"},
+    {"jp":"塗装","vn":"Đồng Sơn","img":"https://picsum.photos/300/200?6"},
+    {"jp":"タイヤ交換","vn":"Thay Lốp","img":"https://picsum.photos/300/200?7"}
+  ],
+  "contact": {
+    "address_jp":"住所: 123区、ホーチミン市",
+    "address_vn":"Địa chỉ: 123 Quận X, TP HCM",
+    "phone_jp":"電話: 012-345-6789",
+    "phone_vn":"Điện thoại: 012-345-6789",
+    "email":"info@example.com",
+    "map":"https://www.google.com/maps/embed?pb=!1m18!..."
+  }
+}

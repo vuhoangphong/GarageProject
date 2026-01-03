@@ -1,0 +1,25 @@
+<section class="banner" id="home">
+  <div class="slides">
+    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200&h=400&fit=crop&crop=center" class="slide active" />
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=400&fit=crop&crop=center" class="slide" />
+    <img src="https://images.unsplash.com/photo-1609420713643-52a0ac240677?w=1200&h=400&fit=crop&crop=center" class="slide" />
+  </div>
+  <div class="banner-text">
+    <h1 class="lang" data-ja="合同会社 大繁" data-vn="合同会社 大繁">
+      合同会社 大繁
+    </h1>
+  </div>
+</section>
+
+<script>
+  let slides = document.querySelectorAll(".slide");
+  let current = 0;
+  function showSlide(index){
+    slides.forEach(s => s.classList.remove("active"));
+    slides[index].classList.add("active");
+  }
+  setInterval(() => {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }, 3000);
+</script>

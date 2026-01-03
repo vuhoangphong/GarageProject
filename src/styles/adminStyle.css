@@ -1,0 +1,11 @@
+body { font-family: sans-serif; margin:0; padding:0; }
+header { display:flex; justify-content:space-between; align-items:center; padding:10px 20px; background:#222; color:#fff; }
+header .logo { font-size:1.5em; font-weight:bold; }
+nav a { color:#fff; margin:0 10px; text-decoration:none; }
+.banner img { width:100%; display:none; }
+.banner img.active { display:block; }
+.services, .contact { padding:20px; }
+.service-items { display:flex; flex-wrap:wrap; gap:10px; }
+.service-item { flex:1 1 200px; text-align:center; }
+.service-item img { width:100%; height:auto; }
+footer { text-align:center; padding:10px; background:#222; color:#fff; }

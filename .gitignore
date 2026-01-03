@@ -1,0 +1,52 @@
+# dependencies
+node_modules/
+.pnpm-store/
+.yarn/
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+
+# build output
+dist/
+build/
+.vercel/
+.netlify/
+.output/
+.server/
+
+# environment variables
+.env
+.env.local
+.env.production
+.env.development
+.env.*.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# system files
+.DS_Store
+Thumbs.db
+
+# editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sw?
+*.bak
+*.log
+
+# Astro cache
+.astro/
+.cache/
+
+# optional types
+*.tsbuildinfo
+
+# local assets
+public/uploads/
