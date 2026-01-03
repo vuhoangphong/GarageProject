@@ -15,10 +15,9 @@
     <div class="footer-section">
       <h3 class="lang" data-ja="サービス" data-vn="Dịch vụ">サービス</h3>
       <ul>
-        <li class="lang" data-ja="メンテナンス" data-vn="Bảo dưỡng">メンテナンス</li>
-        <li class="lang" data-ja="車検" data-vn="Đăng kiểm">車検</li>
-        <li class="lang" data-ja="塗装" data-vn="Đồng sơn">塗装</li>
-        <li class="lang" data-ja="タイヤ交換" data-vn="Thay lốp">タイヤ交換</li>
+        <li><a href="/services/inspection" class="lang" data-ja="車検・点検" data-vn="Bảo Dưỡng">車検</a></li>
+        <li><a href="/services/repair" class="lang" data-ja="鈑金・修理" data-vn="Sửa chữa thân xe">鈑金</a></li>
+        <li><a href="/services/painting" class="lang" data-ja="塗装・美装" data-vn="Sơn xe">塗装</a></li>
       </ul>
     </div>
   </div>
@@ -27,3 +26,26 @@
     <p class="lang" data-ja="© 2026 合同会社 大繁. All rights reserved." data-vn="© 2026 合同会社 大繁. Bản quyền thuộc về chúng tôi.">© 2026 合同会社 大繁. All rights reserved.</p>
   </div>
 </footer>
+
+<style>
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-section ul li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section ul li a:hover {
+    color: var(--primary-red, #c41e3a);
+    text-decoration: underline;
+  }
+</style>

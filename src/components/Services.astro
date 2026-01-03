@@ -20,7 +20,7 @@
                itemprop="image" />
         </div>
         <div class="service-content">
-          <h3 class="service-title langService" data-ja="車検・点検" data-vn="Đăng kiểm xe" itemprop="name">車検・点検</h3>
+          <h3 class="service-title langService" data-ja="車検・点検" data-vn="Bảo Dưỡng" itemprop="name">車検・点検</h3>
           <p class="service-description langService" 
              data-ja="法定車検から定期点検まで、安全で確実な整備を行います。"
              data-vn="Từ đăng kiểm định kỳ đến bảo dưỡng thường xuyên, chúng tôi thực hiện bảo trì an toàn và đáng tin cậy.">
@@ -241,5 +241,56 @@
 
 .service-link:hover .learn-more span {
   color: var(--secondary-red);
+}
+
+@media (max-width: 768px) {
+  .service-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .service-item {
+    font-size: 14px;
+  }
+  
+  .service-image {
+    height: 140px;
+  }
+  
+  .service-content {
+    padding: 15px;
+  }
+  
+  .service-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .service-description {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  
+  .service-features {
+    margin-bottom: 10px;
+  }
+  
+  .feature {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  
+  .learn-more span {
+    font-size: 12px;
+  }
+  
+  .service-icon {
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    padding: 6px;
+  }
 }
 </style>
