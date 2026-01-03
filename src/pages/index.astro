@@ -40,6 +40,16 @@ import Footer from "../components/Footer.astro";
         itemtype="https://schema.org/LocalBusiness"
       >
         <div class="contact-info-grid">
+<div class="mobile-contact-info">
+            <p>〒601-8145 京都府京都市南区上鳥羽西浦町</p>
+            <p class="lang" data-ja="月〜金  9:00 - 18:00" data-vn="Thứ 2-6  9:00 - 18:00">月〜金  9:00 - 18:00</p>
+            <p class="lang" data-ja="土曜日  9:00 - 16:00" data-vn="Thứ 7  9:00 - 16:00">土曜日  9:00 - 16:00</p>
+            <p class="lang" data-ja="日・祝  定休日" data-vn="CN & Lễ  Nghỉ">日・祝  定休日</p>
+            <br>
+            <p><span class="lang" data-ja="お電話" data-vn="Điện thoại">お電話</span>  <a href="tel:012-345-6789">012-345-6789</a></p>
+            <p class="lang" data-ja="お気軽にお電話ください" data-vn="Xin vui lòng gọi điện thoại thoải mái">お気軽にお電話ください</p>
+          </div>
+          
           <div class="contact-card">
             <div class="card-icon">📍</div>
             <h3 class="card-title lang" data-ja="所在地" data-vn="Địa chỉ">
@@ -100,7 +110,9 @@ import Footer from "../components/Footer.astro";
               お電話
             </h3>
             <div class="card-content">
-              <p class="phone-number" itemprop="telephone">012-345-6789</p>
+              <p class="phone-number" itemprop="telephone">
+                <a href="tel:012-345-6789">012-345-6789</a>
+              </p>
               <p
                 class="phone-note lang"
                 data-ja="お気軽にお電話ください"
@@ -184,6 +196,10 @@ import Footer from "../components/Footer.astro";
     margin-bottom: 50px;
   }
 
+  .mobile-contact-info {
+    display: none;
+  }
+
   .contact-card {
     background: #fafafa;
     padding: 30px;
@@ -232,6 +248,15 @@ import Footer from "../components/Footer.astro";
     font-weight: 600;
     color: var(--primary-red);
     margin-bottom: 8px;
+  }
+
+  .phone-number a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .phone-number a:hover {
+    text-decoration: underline;
   }
 
   .phone-note {
@@ -299,16 +324,22 @@ import Footer from "../components/Footer.astro";
       display: none;
     }
     
-    .contact-info-grid::after {
-      content: "〒601-8145 京都府京都市南区上鳥羽西浦町\A月〜金  9:00 - 18:00\A土曜日  9:00 - 16:00\A日・祝  定休日\A\Aお電話  012-345-6789\Aお気軽にお電話ください";
-      white-space: pre-line;
+    .mobile-contact-info {
       display: block;
     }
     
-    .contact-info-grid[data-lang="vn"]::after {
-      content: "〒601-8145 Kyoto, Minami Ward, Kamitoba Nishiurachō\AThứ 2-6  9:00 - 18:00\AThứ 7  9:00 - 16:00\ACN & Lễ  Nghỉ\A\AĐiện thoại  012-345-6789\AXin vui lòng gọi điện thoại thoải mái";
-      white-space: pre-line;
-      display: block;
+    .mobile-contact-info p {
+      margin: 8px 0;
+    }
+    
+    .mobile-contact-info a {
+      color: var(--primary-red, #c41e3a);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .mobile-contact-info a:hover {
+      text-decoration: underline;
     }
   }
 </style>
