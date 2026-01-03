@@ -1,17 +1,28 @@
-<section class="services" id="services">
+<section class="services" id="services" itemscope itemtype="https://schema.org/AutoRepair">
   <h2 class="langService" data-ja="主なサービス" data-vn="Dịch vụ chính">主なサービス</h2>
   <div class="service-items">
-    <div class="service-item">
-      <img src="https://www.hayataro.com/upload/save/post/beaabf80a597240516a905789347644c.jpg" alt="車検サービス" />
-      <h3 class="langService" data-ja="車検" data-vn="Đăng kiểm">車検</h3>
-    </div>
-    <div class="service-item">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" alt="鈑金サービス" />
-      <h3 class="langService" data-ja="鈑金" data-vn="Sửa chữa thân xe">鈑金</h3>
-    </div>
-    <div class="service-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPG_v2lKnET2pMaYaVzL4VriZ880pHPjNYIg&s" alt="塗装サービス" />
-      <h3 class="langService" data-ja="塗装" data-vn="Sơn xe">塗装</h3>
-    </div>
+    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+      <img src="https://www.hayataro.com/upload/save/post/beaabf80a597240516a905789347644c.jpg" 
+           alt="車検サービス - 法定点検と整備" 
+           itemprop="image" />
+      <h3 class="langService" data-ja="車検" data-vn="Đăng kiểm" itemprop="name">車検</h3>
+      <meta itemprop="description" content="法定車検と定期点検サービス" />
+    </article>
+    
+    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop" 
+           alt="鈑金サービス - 車体修理と復元" 
+           itemprop="image" />
+      <h3 class="langService" data-ja="鈑金" data-vn="Sửa chữa thân xe" itemprop="name">鈑金</h3>
+      <meta itemprop="description" content="車体の損傷修理と形状復元" />
+    </article>
+    
+    <article class="service-item" itemscope itemtype="https://schema.org/Service">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPG_v2lKnET2pMaYaVzL4VriZ880pHPjNYIg&s" 
+           alt="塗装サービス - 車体塗装と仕上げ" 
+           itemprop="image" />
+      <h3 class="langService" data-ja="塗装" data-vn="Sơn xe" itemprop="name">塗装</h3>
+      <meta itemprop="description" content="車体塗装と美装仕上げサービス" />
+    </article>
   </div>
 </section>

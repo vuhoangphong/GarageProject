@@ -1,10 +1,82 @@
 ---
 import "../styles/style.css";
+
+export interface Props {
+  pageTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
+  socialImage?: string;
+  pageUrl?: string;
+}
+
+const {
+  pageTitle = "合同会社 大繁 - 自動車修理・車検・塗装サービス",
+  metaDescription = "合同会社 大繁は車検、鈑金、塗装などの自動車修理サービスを提供しています。豊富な経験と確かな技術でお客様の大切なお車をサポートします。",
+  metaKeywords = "車検, 鈑金, 塗装, 自動車修理, メンテナンス, 合同会社大繁",
+  socialImage = "https://garage-project-rose.vercel.app/social-preview.jpg",
+  pageUrl = "https://garage-project-rose.vercel.app/"
+} = Astro.props;
 ---
+
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO -->
+    <title>{pageTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="keywords" content={metaKeywords} />
+    <meta name="author" content="合同会社 大繁" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Link Relations -->
+    <link rel="canonical" href={pageUrl} />
+    <link rel="alternate" hreflang="ja" href={pageUrl} />
+    <link rel="alternate" hreflang="vi" href={pageUrl + "?lang=vn"} />
+    
+    <!-- Social Media Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:site_name" content="合同会社 大繁" />
+    <meta property="og:locale" content="ja_JP" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    
+    <!-- Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "合同会社 大繁",
+      "description": "自動車修理、車検、鈑金、塗装サービス",
+      "url": "https://garage-project-rose.vercel.app/",
+      "telephone": "012-345-6789",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kamitoba Nishiuracho",
+        "addressLocality": "Kyoto",
+        "addressRegion": "Kyoto",
+        "postalCode": "601-8145",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "34.9568337",
+        "longitude": "135.73937337"
+      },
+      "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-16:00",
+      "priceRange": "$$"
+    }
+    </script>
+    
     <slot name="head" />
   </head>
   <body>
