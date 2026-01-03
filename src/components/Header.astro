@@ -12,13 +12,13 @@
   </a>
   <button class="mobile-menu" id="mobileToggle">☰</button>
   <nav id="navigation">
-    <a href="#home" class="nav-link">
+    <a href="#home" class="nav-link service-hidden">
       <span class="nav-text langHeaderSerive" data-ja="ホーム" data-vn="Trang Chủ">ホーム</span>
     </a>
-    <a href="#services" class="nav-link">
+    <a href="#services" class="nav-link service-hidden">
       <span class="nav-text langHeaderSerive" data-ja="サービス" data-vn="Dịch Vụ">サービス</span>
     </a>
-    <a href="#contact" class="nav-link">
+    <a href="#contact" class="nav-link service-hidden">
       <span class="nav-text langHeaderSerive" data-ja="お問い合わせ" data-vn="Liên Hệ">お問い合わせ</span>
     </a>
     <button id="toggleLang" class="lang-toggle">
@@ -43,6 +43,11 @@ header {
   justify-content: space-between;
   padding: 15px 20px;
   color: white;
+}
+
+/* Hide nav-links on service pages */
+body.service-page .service-hidden {
+  display: none !important;
 }
 
 .logo-link {
@@ -250,6 +255,11 @@ nav {
 
   // Initialize language on page load
   document.addEventListener('DOMContentLoaded', applySavedLanguage);
+
+  // Check if current page is a service page and add class to body
+  if (window.location.pathname.includes('/services/')) {
+    document.body.classList.add('service-page');
+  }
 
   // Attach language toggle to both buttons
   if (toggleBtn) {
