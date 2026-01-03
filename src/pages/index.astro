@@ -316,7 +316,7 @@ import Footer from "../components/Footer.astro";
       margin-bottom: 50px;
       text-align: left;
       line-height: 1.8;
-      color: #333;
+      color: var(--dark-gray, #333) !important;
       font-size: 15px;
     }
     
@@ -326,14 +326,16 @@ import Footer from "../components/Footer.astro";
     
     .mobile-contact-info {
       display: block;
+      color: var(--dark-gray, #333) !important;
     }
     
     .mobile-contact-info p {
       margin: 8px 0;
+      color: var(--dark-gray, #333) !important;
     }
     
     .mobile-contact-info a {
-      color: var(--primary-red, #c41e3a);
+      color: var(--dark-gray, #333) !important;
       text-decoration: none;
       font-weight: 600;
     }
