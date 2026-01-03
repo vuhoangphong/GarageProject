@@ -23,6 +23,44 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Japanese Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=M+PLUS+1p:wght@300;400;500;700&family=Kosugi+Maru&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --primary-red: #c8102e;
+        --secondary-red: #8b0000;
+        --accent-gold: #d4af37;
+        --dark-gray: #2c2c2c;
+        --light-gray: #f7f7f7;
+        --border-color: #e6e6e6;
+        --shadow: 0 2px 8px rgba(0,0,0,0.08);
+        --japanese-blue: #003f7f;
+        --japanese-green: #006b3c;
+      }
+
+      body {
+        font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+        font-weight: 400;
+        line-height: 1.8;
+        letter-spacing: 0.05em;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Noto Serif JP', 'Times New Roman', serif;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+      }
+
+      p {
+        margin-bottom: 1.2em;
+      }
+    </style>
+    
     <!-- Primary SEO -->
     <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />

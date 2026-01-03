@@ -213,16 +213,6 @@ nav a:hover {
   position: relative;
 }
 
-.services h2::after {
-  content: '';
-  width: 60px;
-  height: 4px;
-  background: var(--primary-red);
-  display: block;
-  margin: 15px auto;
-  border-radius: 2px;
-}
-
 .service-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

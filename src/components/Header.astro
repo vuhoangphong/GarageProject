@@ -1,20 +1,188 @@
 <header>
-  <div class="logo">合同会社 大繁</div>
+  <div class="logo">
+    <div class="company-name">
+      <span class="kanji">合同会社</span>
+      <span class="company-main">大繁</span>
+    </div>
+    <div class="company-subtitle">
+      <span class="lang" data-ja="自動車総合サービス" data-vn="Dịch vụ ô tô tổng hợp">自動車総合サービス</span>
+    </div>
+  </div>
   <button class="mobile-menu" id="mobileToggle">☰</button>
   <nav id="navigation">
-    <a href="#home" class="langHeaderSerive" data-ja="ホーム" data-vn="Trang Chủ">ホーム</a>
-    <a href="#services" class="langHeaderSerive" data-ja="サービス" data-vn="Dịch Vụ">サービス</a>
-    <a href="#contact" class="langHeaderSerive" data-ja="お問い合わせ" data-vn="Liên Hệ">お問い合わせ</a>
-    <button id="toggleLang">
+    <a href="#home" class="nav-link">
+      <span class="nav-kanji">🏠</span>
+      <span class="nav-text langHeaderSerive" data-ja="ホーム" data-vn="Trang Chủ">ホーム</span>
+    </a>
+    <a href="#services" class="nav-link">
+      <span class="nav-kanji">⚙️</span>
+      <span class="nav-text langHeaderSerive" data-ja="サービス" data-vn="Dịch Vụ">サービス</span>
+    </a>
+    <a href="#contact" class="nav-link">
+      <span class="nav-kanji">📞</span>
+      <span class="nav-text langHeaderSerive" data-ja="お問い合わせ" data-vn="Liên Hệ">お問い合わせ</span>
+    </a>
+    <button id="toggleLang" class="lang-toggle">
       <img src="/icon_Lang_Japan.png" alt="JP" class="flag-icon" width="16" height="12"> 
       <span>JP</span>
     </button>
   </nav>
-  <button id="toggleLangDesktop">
+  <button id="toggleLangDesktop" class="lang-toggle">
     <img src="/icon_Lang_Japan.png" alt="JP" class="flag-icon" width="16" height="12"> 
     <span>JP</span>
   </button>
 </header>
+
+<style>
+/* Japanese-style header */
+header {
+  background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
+  border-bottom: 4px solid var(--accent-gold);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.company-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3em;
+}
+
+.kanji {
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.company-main {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.company-subtitle {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: -2px;
+  font-weight: 300;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-kanji {
+  font-size: 16px;
+}
+
+.nav-text {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+}
+
+.lang-toggle {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--dark-gray);
+}
+
+.lang-toggle:hover {
+  background: white;
+  transform: translateY(-1px);
+}
+
+.mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-red);
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  nav.mobile-open {
+    display: flex;
+  }
+  
+  .nav-link {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+  }
+  
+  .nav-link:hover {
+    background: rgba(255,255,255,0.2);
+  }
+  
+  #toggleLangDesktop {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  #toggleLang {
+    display: none;
+  }
+}
+</style>
 
 <script>
   const toggleBtn = document.getElementById("toggleLang");
