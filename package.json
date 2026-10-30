@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",`r`n    "sync:threads": "node scripts/sync_threads.mjs"
+    "astro": "astro",
+    "sync:threads": "node scripts/sync_threads.mjs"
   },
   "dependencies": {
     "astro": "^5.16.6"
