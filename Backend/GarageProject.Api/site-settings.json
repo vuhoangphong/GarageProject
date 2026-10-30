@@ -1,0 +1,105 @@
+﻿{
+    "Address":  "〒601-8212 京都府京都市南区久世上久世町411-2",
+    "Phone":  "+81 90-8234-3176",
+    "WorkingHours":  "Mon-Fri 9:00 - 19:00",
+    "GoogleMapEmbedUrl":  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3270.123456789!2d135.74!3d34.956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600105ed77e39069%3A0xaa1606b76966a47!2z5LyK5LiW5LiK5LiW5Liw6Kmk56eR!5e0!3m2!1svi!2s!4v1767410445065!5m2!1svi!2s",
+    "Services":  [
+                     {
+                         "Id":  "b6e12395-c3ef-4158-be71-ed20042c8b56",
+                         "Icon":  "🚗",
+                         "ImageUrl":  "https://www.hayataro.com/upload/save/post/beaabf80a597240516a905789347644c.jpg",
+                         "Title":  {
+                                       "Ja":  "車検・点検",
+                                       "Vn":  "Bảo Dưỡng"
+                                   },
+                         "Description":  {
+                                             "Ja":  "法定車検から定期点検まで、安全で確実な整備を行います。",
+                                             "Vn":  "Từ đăng kiểm định kỳ đến bảo dưỡng thường xuyên, chúng tôi thực hiện bảo trì an toàn và đáng tin cậy."
+                                         },
+                         "Features":  [
+                                          {
+                                              "Ja":  "法定車検",
+                                              "Vn":  "Đăng kiểm định kỳ"
+                                          },
+                                          {
+                                              "Ja":  "定期点検",
+                                              "Vn":  "Kiểm tra định kỳ"
+                                          }
+                                      ]
+                     },
+                     {
+                         "Id":  "2340ab60-c3b9-4169-9bd9-837a3a7557b2",
+                         "Icon":  "🔧",
+                         "ImageUrl":  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400\u0026h=250\u0026fit=crop",
+                         "Title":  {
+                                       "Ja":  "鈑金・修理",
+                                       "Vn":  "Sửa chữa thân xe"
+                                   },
+                         "Description":  {
+                                             "Ja":  "事故車両の修理から小さな傷まで、熟練の技術で丁寧に修復します。",
+                                             "Vn":  "Từ sửa chữa xe tai nạn đến những vết trầy xước nhỏ, chúng tôi khôi phục cẩn thận bằng kỹ thuật thành thạo."
+                                         },
+                         "Features":  [
+                                          {
+                                              "Ja":  "事故修理",
+                                              "Vn":  "Sửa tai nạn"
+                                          },
+                                          {
+                                              "Ja":  "傷補修",
+                                              "Vn":  "Sửa vết trầy"
+                                          }
+                                      ]
+                     },
+                     {
+                         "Id":  "6e73cf5e-03b3-4603-873d-e545a0ca341c",
+                         "Icon":  "🎨",
+                         "ImageUrl":  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPG_v2lKnET2pMaYaVzL4VriZ880pHPjNYIg\u0026s",
+                         "Title":  {
+                                       "Ja":  "塗装・美装",
+                                       "Vn":  "Sơn xe"
+                                   },
+                         "Description":  {
+                                             "Ja":  "高品質な塗装技術で、お車を美しく仕上げます。",
+                                             "Vn":  "Với công nghệ sơn chất lượng cao, chúng tôi hoàn thiện xe của bạn một cách đẹp mắt."
+                                         },
+                         "Features":  [
+                                          {
+                                              "Ja":  "全塗装",
+                                              "Vn":  "Sơn toàn bộ"
+                                          },
+                                          {
+                                              "Ja":  "部分塗装",
+                                              "Vn":  "Sơn từng phần"
+                                          }
+                                      ]
+                     },
+                     {
+                         "Id":  "93a109b7-ef55-4fc8-a202-8d302eb003da",
+                         "Icon":  "",
+                         "ImageUrl":  "",
+                         "Title":  {
+                                       "Ja":  "d",
+                                       "Vn":  "d"
+                                   },
+                         "Description":  {
+                                             "Ja":  "a",
+                                             "Vn":  "df"
+                                         },
+                         "Features":  [
+                                          {
+                                              "Ja":  "a",
+                                              "Vn":  "f"
+                                          },
+                                          {
+                                              "Ja":  "f",
+                                              "Vn":  "g"
+                                          }
+                                      ]
+                     }
+                 ],
+    "Email":  "Hfoncar@gmail.com",
+    "Line":  "https://line.me/ti/p/nXJpbtsfDY",
+    "Threads":  "https://www.threads.com/@hfoncar0895?igshid=NTc4MTIwNjQ2YQ==",
+    "GoogleMapLink":  "https://maps.app.goo.gl/NAFufmcxXGNwsGap9",
+    "CompanyName":  "フオンカー"
+}

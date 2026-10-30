@@ -1,15 +1,17 @@
-<footer>
+﻿<footer>
   <div class="footer-content">
     <div class="footer-section">
       <h3 class="lang" data-ja="会社情報" data-vn="Thông tin công ty">会社情報</h3>
-      <p class="lang" data-ja="合同会社 大繁" data-vn="合同会社 大繁">合同会社 大繁</p>
-      <p class="lang" data-ja="住所: 123区、ホーチミン市" data-vn="Địa chỉ: 123 Quận X, TP HCM">住所: 123区、ホーチミン市</p>
+      <p class="lang" data-ja="フオンカー" data-vn="フオンカー">フオンカー</p>
+      <p class="lang" data-ja="住所: 〒601-8212 京都府京都市南区久世上久世町411-2" data-vn="Địa chỉ: 〒601-8212 京都府京都市南区久世上久世町411-2">住所: 〒601-8212 京都府京都市南区久世上久世町411-2</p>
     </div>
     
     <div class="footer-section">
       <h3 class="lang" data-ja="お問い合わせ" data-vn="Liên hệ">お問い合わせ</h3>
-      <p class="lang" data-ja="電話: 012-345-6789" data-vn="Điện thoại: 012-345-6789">電話: 012-345-6789</p>
-      <p>Email: info@daishige.com</p>
+      <p class="lang" data-ja="電話: +81 90-8234-3176" data-vn="Điện thoại: +81 90-8234-3176">電話: +81 90-8234-3176</p>
+      <p>Email: <a href="mailto:Hfoncar@gmail.com">Hfoncar@gmail.com</a></p>
+      <p><a href="https://line.me/ti/p/nXJpbtsfDY" target="_blank" rel="noopener">LINE</a></p>
+      <p><a href="https://www.threads.com/@hfoncar0895?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener">Threads</a></p>
     </div>
     
     <div class="footer-section">
@@ -23,7 +25,7 @@
   </div>
   
   <div class="footer-bottom">
-    <p class="lang" data-ja="© 2026 合同会社 大繁. All rights reserved." data-vn="© 2026 合同会社 大繁. Bản quyền thuộc về chúng tôi.">© 2026 合同会社 大繁. All rights reserved.</p>
+    <p class="lang" data-ja="© 2026 フオンカー. All rights reserved." data-vn="© 2026 フオンカー. Bản quyền thuộc về chúng tôi.">© 2026 フオンカー. All rights reserved.</p>
   </div>
 </footer>
 
@@ -45,6 +47,17 @@
   }
 
   .footer-section ul li a:hover {
+    color: var(--primary-red, #c41e3a);
+    text-decoration: underline;
+  }
+
+  .footer-section p a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section p a:hover {
     color: var(--primary-red, #c41e3a);
     text-decoration: underline;
   }
