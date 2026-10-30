@@ -1,4 +1,4 @@
-﻿name: Auto Sync Threads Posts
+name: Auto Sync Threads Posts
 
 on:
   schedule:

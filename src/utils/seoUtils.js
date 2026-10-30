@@ -1,4 +1,4 @@
-﻿export const siteConfig = {
+export const siteConfig = {
   siteName: '京都のフォンカー',
   siteUrl: 'https://garage-project-rose.vercel.app',
   defaultTitle: '京都のフォンカー (Phuong Car of Kyoto) - 自動車板金塗装・修理・車検',

@@ -1,4 +1,4 @@
-﻿import type { APIRoute } from 'astro';
+import type { APIRoute } from 'astro';
 
 const today = new Date().toISOString().split('T')[0];
 
