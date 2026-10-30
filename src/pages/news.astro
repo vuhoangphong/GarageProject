@@ -17,7 +17,7 @@ import newsList from "../data/news.json";
     <!-- Hero Banner -->
     <section class="news-hero">
       <div class="news-hero-content">
-        <span class="hero-badge lang" data-ja="公式 Threads 更新" data-vn="Cập nhật từ Threads chính thức">公式 Threads 更新</span>
+        <span class="hero-badge lang" data-ja="公式 SNS・Threads・Facebook 更新" data-vn="Cập nhật từ Threads & Facebook chính thức">公式 SNS・Threads・Facebook 更新</span>
         <h1 class="hero-title lang" data-ja="最新情報・施工実績" data-vn="Tin Mới & Hình Ảnh Thi Công">
           最新情報・施工実績
         </h1>
@@ -28,13 +28,22 @@ import newsList from "../data/news.json";
         </p>
 
         <!-- Threads Banner Link -->
-        <a href="https://www.threads.com/@hfoncar0895?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener" class="threads-profile-btn">
+        <div class="social-hero-btns">
+          <a href="https://www.facebook.com/Hfoncar/" target="_blank" rel="noopener" class="fb-profile-btn">
+            <span class="fb-icon">📘</span>
+            <div class="threads-btn-text">
+              <strong>Facebook (@Hfoncar)</strong>
+              <span class="lang" data-ja="公式Facebookページを見る →" data-vn="Xem trang Facebook chính thức →">公式Facebookページを見る →</span>
+            </div>
+          </a>
+          <a href="https://www.threads.com/@hfoncar0895?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener" class="threads-profile-btn">
           <span class="threads-icon">🧵</span>
           <div class="threads-btn-text">
             <strong>@hfoncar0895</strong>
             <span class="lang" data-ja="Threadsでリアルタイムの投稿を見る →" data-vn="Xem thêm nhiều bài đăng trên Threads →">Threadsでリアルタイムの投稿を見る →</span>
           </div>
         </a>
+        </div>
       </div>
     </section>
 
@@ -105,6 +114,9 @@ import newsList from "../data/news.json";
           <a href="https://line.me/ti/p/nXJpbtsfDY" target="_blank" rel="noopener" class="cta-line-btn">
             💬 LINEで写真を送る
           </a>
+          <a href="https://www.facebook.com/Hfoncar/" target="_blank" rel="noopener" class="cta-fb-btn lang" data-ja="📘 Facebookで相談" data-vn="📘 Tư vấn qua Facebook">
+            📘 Facebookで相談
+          </a>
         </div>
       </div>
     </section>
@@ -159,6 +171,38 @@ import newsList from "../data/news.json";
     color: #e0e0e0;
     line-height: 1.8;
     margin-bottom: 25px;
+  }
+
+  .social-hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .fb-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(24, 119, 242, 0.2);
+    border: 1px solid rgba(24, 119, 242, 0.6);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .fb-profile-btn:hover {
+    background: rgba(24, 119, 242, 0.4);
+    border-color: #1877f2;
+    transform: translateY(-2px);
+  }
+
+  .fb-icon {
+    font-size: 22px;
   }
 
   .threads-profile-btn {
@@ -423,6 +467,23 @@ import newsList from "../data/news.json";
 
   .cta-line-btn:hover {
     background: #05b04c;
+    transform: translateY(-2px);
+  }
+
+  .cta-fb-btn {
+    background: #1877f2;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+  }
+
+  .cta-fb-btn:hover {
+    background: #166fe5;
     transform: translateY(-2px);
   }
 
