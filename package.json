@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "garage-astro",
   "type": "module",
   "version": "0.0.1",
@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",`r`n    "sync:threads": "node scripts/sync_threads.mjs"
   },
   "dependencies": {
     "astro": "^5.16.6"
