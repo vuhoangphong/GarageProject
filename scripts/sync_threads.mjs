@@ -93,9 +93,12 @@ async function syncThreads() {
     const lines = chunk
       .split("\n")
       .map((l) => l.trim())
-      .filter((l) => l && !l.startsWith("![") && !l.startsWith("[") && !l.includes("Threads, Say more") && !l.includes("Translate"));
+      .filter((l) => l && !l.startsWith("![") && !l.startsWith("[") && !l.includes("Threads, Say more") && !l.includes("Translate") && !l.startsWith("http"));
     
-    const postText = lines[0] || "京都のフォンカー 最新の施工実績・板金塗装";
+    let postText = lines.find((l) => l.length > 5 && !l.includes(pid) && !/^[a-zA-Z0-9_-]+\)?$/.test(l));
+    if (!postText) {
+      postText = "京都のフォンカー 熟練の板金塗装・キズへこみ修理の実績";
+    }
 
     const newItem = {
       id: `post-${pid}`,
@@ -105,17 +108,17 @@ async function syncThreads() {
         ja: "板金塗装・修理",
         vn: "Đồng Sơn & Sửa Chữa"
       },
-      price: "",
+      price: "お見積り無料",
       image: localImg,
       title: {
-        ja: postText.slice(0, 50),
-        vn: `Thi công thực tế: ${postText.slice(0, 50)}`
+        ja: `【施工実績】${postText.slice(0, 45)}`,
+        vn: `【Dự án thực tế】${postText.slice(0, 45)}`
       },
       content: {
-        ja: postText,
-        vn: `${postText} - Liên hệ xưởng Kyoto no Foncar để được tư vấn và báo giá chi tiết qua Hotline hoặc LINE!`
+        ja: `${postText}。京都のフォンカーでは熟練の職人技で愛車を美しく修復いたします。お気軽にご相談ください。`,
+        vn: `${postText} - Quy trình phục hồi đồng sơn kỹ thuật cao tại xưởng Kyoto no Foncar. Liên hệ Hotline hoặc LINE để được tư vấn báo giá miễn phí!`
       },
-      tags: ["#京都フォンカー", "#板金塗装", "#最新施工実績"]
+      tags: ["#京都フォンカー", "#板金塗装", "#キズへこみ修理", "#施工実績"]
     };
 
     existingNews.unshift(newItem);
