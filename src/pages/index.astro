@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Slider from "../components/Slider.astro";
 import Services from "../components/Services.astro";
 import Footer from "../components/Footer.astro";
+import Reviews from "../components/Reviews.astro";
 import newsList from "../data/news.json";
 ---
 
@@ -17,6 +18,56 @@ import newsList from "../data/news.json";
   <Services />
 
   <main>
+    <!-- Latest News / Construction Works Section from Threads -->
+    <section class="latest-news" id="news">
+      <div class="news-section-header">
+        <h2 class="section-title">
+          <span class="title-decoration">━</span>
+          <span class="lang" data-ja="最新情報・施工実績" data-vn="Tin Mới & Hình Ảnh Thi Công">最新情報・施工実績</span>
+          <span class="title-decoration">━</span>
+        </h2>
+        <p class="section-subtitle lang"
+           data-ja="公式Threads（@hfoncar0895）にて日々の板金塗装・修理・車検の実績をリアルタイムで公開中！"
+           data-vn="Hình ảnh thực tế các xe được phục hồi, đồng sơn & sửa chữa trực tiếp tại xưởng!">
+          公式Threads（@hfoncar0895）にて日々の板金塗装・修理・車検の実績をリアルタイムで公開中！
+        </p>
+      </div>
+
+      <div class="home-news-grid">
+        {newsList.slice(0, 3).map((item) => (
+          <article class="home-news-card">
+            <div class="home-card-img">
+              <img src={item.image} alt={item.title.ja} loading="lazy" />
+              {item.price && <span class="home-price-tag">{item.price}</span>}
+              <span class="home-cat-tag lang" data-ja={item.category.ja} data-vn={item.category.vn}>{item.category.ja}</span>
+            </div>
+            <div class="home-card-body">
+              <span class="home-card-date">📅 {item.date}</span>
+              <h3 class="home-card-title lang" data-ja={item.title.ja} data-vn={item.title.vn}>{item.title.ja}</h3>
+              <p class="home-card-desc lang" data-ja={item.content.ja} data-vn={item.content.vn}>{item.content.ja}</p>
+              <div class="home-card-actions">
+                <a href={item.threadsUrl} target="_blank" rel="noopener" class="home-threads-link">
+                  🧵 Threadsで見る
+                </a>
+                <a href="/news" class="home-detail-link lang" data-ja="詳細 ➜" data-vn="Chi tiết ➜">
+                  詳細 ➜
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="view-all-news-container">
+        <a href="/news" class="btn-view-all-news lang" data-ja="すべての最新情報・施工実績を見る ➜" data-vn="Xem tất cả tin mới & hình ảnh thi công ➜">
+          すべての最新情報・施工実績を見る ➜
+        </a>
+      </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <Reviews />
+
     <section class="contact" id="contact">
       <div class="contact-header">
         <h2 class="contact-title">

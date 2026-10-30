@@ -1,0 +1,119 @@
+﻿[
+  {
+    "id": "rev-1",
+    "author": "Nhat Pham van",
+    "avatar": "N",
+    "rating": 5,
+    "date": {
+      "ja": "5ヶ月前",
+      "vn": "5 tháng trước"
+    },
+    "originalLang": "ja",
+    "content": {
+      "ja": "サービスがとても良く、オーナーさんもとても親切でした。愛車を安心して任せることができました。",
+      "vn": "Dịch vụ rất tốt, anh chủ cực kỳ thân thiện và nhiệt tình. Rất an tâm khi giao xe cho xưởng xử lý."
+    },
+    "ownerResponse": {
+      "ja": "ありがとうございます！また何かございましたらいつでもお気軽にご相談ください。",
+      "vn": "Cảm ơn quý khách rất nhiều! Nếu có bất kỳ vấn đề gì, xin vui lòng liên hệ lại với xưởng nhé."
+    }
+  },
+  {
+    "id": "rev-2",
+    "author": "Tuấn Nguyễn",
+    "avatar": "T",
+    "rating": 5,
+    "date": {
+      "ja": "5ヶ月前",
+      "vn": "5 tháng trước"
+    },
+    "originalLang": "vn",
+    "translatedToJa": true,
+    "content": {
+      "ja": "ありがとうございました。車をとても綺麗に直していただき、料金も良心的でした。また何かあればよろしくお願いします。",
+      "vn": "Cảm ơn garage nhiều nhé. Làm xe rất đẹp và giá cả cực kỳ hợp lý. Lần sau có vấn đề gì sẽ tiếp tục ủng hộ."
+    },
+    "ownerResponse": {
+      "ja": "誠にありがとうございました。またのご利用を心よりお待ちしております。",
+      "vn": "Cảm ơn anh rất nhiều. Rất hân hạnh được phục vụ anh trong những lần tiếp theo ạ."
+    }
+  },
+  {
+    "id": "rev-3",
+    "author": "Phuong Nguyen",
+    "avatar": "P",
+    "rating": 5,
+    "date": {
+      "ja": "5ヶ月前",
+      "vn": "5 tháng trước"
+    },
+    "originalLang": "vn",
+    "translatedToJa": true,
+    "content": {
+      "ja": "以前こちらで板金修理をお願いしました。スタッフの皆様がとても熱心で親切に対応してくれました😊😊",
+      "vn": "Mình từng làm xe ở đây, nhân viên rất nhiệt tình và thân thiện 😊😊"
+    },
+    "ownerResponse": {
+      "ja": "温かい評価をありがとうございます！これからも丁寧な施工を心がけてまいります。",
+      "vn": "Cảm ơn bạn đã tin tưởng và đánh giá tốt cho xưởng! Chúc bạn lái xe an toàn."
+    }
+  },
+  {
+    "id": "rev-4",
+    "author": "高橋 健二 (Kenji Takahashi)",
+    "avatar": "高",
+    "rating": 5,
+    "date": {
+      "ja": "3ヶ月前",
+      "vn": "3 tháng trước"
+    },
+    "originalLang": "ja",
+    "content": {
+      "ja": "リアフェンダーのへこみと擦り傷の板金塗装をお願いしました。ディーラーの見積もりよりも大幅に安く、仕上がりも境目が全く分からないほど完璧でした！京都でおすすめの板金屋さんです。",
+      "vn": "Tôi đã làm đồng sơn vết móp và trầy ở vè sau xe. Giá rẻ hơn đại lý hãng rất nhiều mà độ hoàn thiện thì tuyệt đối không nhìn thấy vết tích. Xưởng đồng sơn rất uy tín tại Kyoto."
+    },
+    "ownerResponse": {
+      "ja": "高評価をいただきありがとうございます！ご満足いただけてスタッフ一同大変励みになります。",
+      "vn": "Cảm ơn quý khách đã tin tưởng và đánh giá cao! Sự hài lòng của quý khách là động lực của chúng tôi."
+    }
+  },
+  {
+    "id": "rev-5",
+    "author": "Minh Hoàng",
+    "avatar": "M",
+    "rating": 5,
+    "date": {
+      "ja": "2ヶ月前",
+      "vn": "2 tháng trước"
+    },
+    "originalLang": "vn",
+    "translatedToJa": true,
+    "content": {
+      "ja": "車の傷の修理がとても早く、費用も予算に合わせて良心的に相談に乗ってくれました。LINEでの事前見積もりも丁寧で助かりました！",
+      "vn": "Sửa vết xước xe rất nhanh, chi phí tính theo mức giá hợp lý và tư vấn rất tận tâm. Báo giá trước qua LINE rõ ràng, chi tiết, rất đáng tiền!"
+    },
+    "ownerResponse": {
+      "ja": "ご利用ありがとうございました！LINEでのお見積もりやご相談はいつでも歓迎しております。",
+      "vn": "Cảm ơn bạn đã ủng hộ xưởng! Xưởng luôn sẵn sàng hỗ trợ báo giá và tư vấn qua LINE bất cứ lúc nào."
+    }
+  },
+  {
+    "id": "rev-6",
+    "author": "山田 雅人 (Masato Yamada)",
+    "avatar": "山",
+    "rating": 5,
+    "date": {
+      "ja": "1ヶ月前",
+      "vn": "1 tháng trước"
+    },
+    "originalLang": "ja",
+    "content": {
+      "ja": "飛び石の傷とドアの板金をお願いしました。相談から納車まで迅速で、技術力の高さを実感しました。また車検や整備の際もお世話になりたいと思います。",
+      "vn": "Tôi đã làm sơn lại vết đá văng và gò cửa xe. Từ khâu tư vấn đến lúc giao xe rất nhanh chóng và tay nghề thợ rất cao. Nhất định sẽ quay lại khi đến kỳ đăng kiểm Shaken."
+    },
+    "ownerResponse": {
+      "ja": "嬉しいお言葉をありがとうございます。車検やメンテナンスの際もお気軽にご連絡くださいませ！",
+      "vn": "Rất cảm ơn đánh giá của quý khách. Đến kỳ Shaken hay bảo dưỡng xin hãy liên hệ xưởng nhé!"
+    }
+  }
+]
