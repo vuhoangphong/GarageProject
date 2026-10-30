@@ -10,9 +10,9 @@ export interface Props {
 }
 
 const {
-  pageTitle = "フオンカー - 自動車修理・車検・塗装サービス",
-  metaDescription = "フオンカーは車検、鈑金、塗装などの自動車修理サービスを提供しています。豊富な経験と確かな技術でお客様の大切なお車をサポートします。",
-  metaKeywords = "車検, 鈑金, 塗装, 自動車修理, メンテナンス, フオンカー",
+  pageTitle = "京都のフォンカー (Phuong Car of Kyoto) - 自動車板金塗装・修理・車検",
+  metaDescription = "京都のフォンカー（Phuong Car of Kyoto）は京都の自動車板金塗装、車検、修理専門店です。熟練の技術でお客様の愛車を丁寧にサポートいたします。",
+  metaKeywords = "京都, フォンカー, Phuong Car, 車検, 鈑金, 塗装, 自動車修理, メンテナンス",
   socialImage = "https://garage-project-rose.vercel.app/social-preview.jpg",
   pageUrl = "https://garage-project-rose.vercel.app/"
 } = Astro.props;
@@ -65,7 +65,7 @@ const {
     <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />
     <meta name="keywords" content={metaKeywords} />
-    <meta name="author" content="フオンカー" />
+    <meta name="author" content="京都のフォンカー" />
     <meta name="robots" content="index, follow" />
     
     <!-- Link Relations -->
@@ -79,7 +79,7 @@ const {
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={metaDescription} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:site_name" content="フオンカー" />
+    <meta property="og:site_name" content="京都のフォンカー" />
     <meta property="og:locale" content="ja_JP" />
     
     <!-- Twitter Card -->
@@ -93,7 +93,7 @@ const {
     {
       "@context": "https://schema.org",
       "@type": "AutoRepair",
-      "name": "フオンカー",
+      "name": "京都のフォンカー (Phuong Car of Kyoto)",
       "description": "自動車修理、車検、鈑金、塗装サービス",
       "url": "https://garage-project-rose.vercel.app/",
       "telephone": "+81 90-8234-3176",
