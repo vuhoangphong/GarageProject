@@ -1,0 +1,434 @@
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import newsList from "../data/news.json";
+---
+
+<BaseLayout
+  pageTitle="最新情報・施工実績 | 京都のフォンカー (Phuong Car of Kyoto)"
+  metaDescription="京都のフォンカーの最新情報と施工実績。板金塗装、車検、傷修復の施工例を写真付きでご紹介します。"
+  metaKeywords="京都, フォンカー, Phuong Car, 施工実績, 最新情報, 板金塗装, 修理実績"
+  pageUrl="https://garage-project-rose.vercel.app/news"
+>
+  <Header />
+
+  <main class="news-page">
+    <!-- Hero Banner -->
+    <section class="news-hero">
+      <div class="news-hero-content">
+        <span class="hero-badge lang" data-ja="公式 Threads 更新" data-vn="Cập nhật từ Threads chính thức">公式 Threads 更新</span>
+        <h1 class="hero-title lang" data-ja="最新情報・施工実績" data-vn="Tin Mới & Hình Ảnh Thi Công">
+          最新情報・施工実績
+        </h1>
+        <p class="hero-subtitle lang" 
+           data-ja="京都のフォンカー（Phuong Car of Kyoto）の日々の板金塗装・車検・修理の実績をご紹介いたします。"
+           data-vn="Hình ảnh thực tế các dự án đồng sơn, sửa chữa thân xe và phục hồi xe tại xưởng Kyoto.">
+          京都のフォンカー（Phuong Car of Kyoto）の日々の板金塗装・車検・修理の実績をご紹介いたします。
+        </p>
+
+        <!-- Threads Banner Link -->
+        <a href="https://www.threads.com/@hfoncar0895?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener" class="threads-profile-btn">
+          <span class="threads-icon">🧵</span>
+          <div class="threads-btn-text">
+            <strong>@hfoncar0895</strong>
+            <span class="lang" data-ja="Threadsでリアルタイムの投稿を見る →" data-vn="Xem thêm nhiều bài đăng trên Threads →">Threadsでリアルタイムの投稿を見る →</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- News Grid Section -->
+    <section class="news-container">
+      <div class="news-grid">
+        {newsList.map((item) => (
+          <article class="news-card">
+            <div class="card-image-wrapper">
+              <img src={item.image} alt={item.title.ja} loading="lazy" />
+              <div class="card-badge-container">
+                <span class="category-badge lang" data-ja={item.category.ja} data-vn={item.category.vn}>
+                  {item.category.ja}
+                </span>
+                {item.price && (
+                  <span class="price-badge">{item.price}</span>
+                )}
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-date">📅 {item.date}</span>
+                <span class="card-source">via Threads</span>
+              </div>
+
+              <h2 class="card-title lang" data-ja={item.title.ja} data-vn={item.title.vn}>
+                {item.title.ja}
+              </h2>
+
+              <p class="card-desc lang" data-ja={item.content.ja} data-vn={item.content.vn}>
+                {item.content.ja}
+              </p>
+
+              <div class="card-tags">
+                {item.tags.map(tag => (
+                  <span class="tag-pill">{tag}</span>
+                ))}
+              </div>
+
+              <div class="card-actions">
+                <a href={item.threadsUrl} target="_blank" rel="noopener" class="btn-threads lang" data-ja="🧵 Threadsで見る" data-vn="🧵 Xem trên Threads">
+                  🧵 Threadsで見る
+                </a>
+                <a href="https://line.me/ti/p/nXJpbtsfDY" target="_blank" rel="noopener" class="btn-line lang" data-ja="LINEで相談" data-vn="Tư vấn LINE">
+                  LINEで相談
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Quick Contact CTA -->
+      <div class="news-cta-box">
+        <h3 class="lang" data-ja="お車のキズ・へこみ・板金塗装のご相談はお気軽に！" data-vn="Xe bạn bị trầy xước, móp méo hay cần sơn sửa? Liên hệ ngay!">
+          お車のキズ・へこみ・板金塗装のご相談はお気軽に！
+        </h3>
+        <p class="lang" 
+           data-ja="お見積り無料・LINEやDMから写真をお送りいただくだけで迅速にお見積もりいたします。"
+           data-vn="Tư vấn & báo giá hoàn toàn miễn phí. Chỉ cần gửi hình ảnh chụp xe qua LINE hoặc điện thoại trực tiếp.">
+          お見積り無料・LINEやDMから写真をお送りいただくだけで迅速にお見積もりいたします。
+        </p>
+        <div class="cta-actions">
+          <a href="tel:+819082343176" class="cta-phone-btn">
+            📞 +81 90-8234-3176
+          </a>
+          <a href="https://line.me/ti/p/nXJpbtsfDY" target="_blank" rel="noopener" class="cta-line-btn">
+            💬 LINEで写真を送る
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .news-page {
+    background: #f8f9fa;
+    min-height: 80vh;
+  }
+
+  .news-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0006 100%);
+    color: white;
+    padding: 70px 20px 60px;
+    text-align: center;
+    position: relative;
+    border-bottom: 3px solid var(--accent-gold, #d4af37);
+  }
+
+  .news-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    color: #f5e6b3;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 700;
+    margin: 0 0 16px;
+    font-family: 'Noto Serif JP', serif;
+    color: white;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(14px, 2vw, 16px);
+    color: #e0e0e0;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  .threads-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+
+  .threads-profile-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #d4af37;
+    transform: translateY(-2px);
+  }
+
+  .threads-icon {
+    font-size: 22px;
+  }
+
+  .threads-btn-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 12px;
+  }
+
+  .threads-btn-text strong {
+    font-size: 14px;
+    color: #f5e6b3;
+  }
+
+  /* Grid Section */
+  .news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px 80px;
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .news-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    background: #222;
+    overflow: hidden;
+  }
+
+  .card-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .news-card:hover .card-image-wrapper img {
+    transform: scale(1.05);
+  }
+
+  .card-badge-container {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    z-index: 2;
+  }
+
+  .category-badge {
+    background: rgba(196, 30, 58, 0.95);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+  }
+
+  .price-badge {
+    background: rgba(212, 175, 55, 0.95);
+    color: #1a1a1a;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  .card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #2c2c2c;
+    margin: 0 0 10px;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0 0 16px;
+    flex-grow: 1;
+  }
+
+  .card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+
+  .tag-pill {
+    background: #f0f0f0;
+    color: #666;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .card-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .btn-threads {
+    flex: 1;
+    text-align: center;
+    background: #000;
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .btn-threads:hover {
+    opacity: 0.85;
+  }
+
+  .btn-line {
+    flex: 1;
+    text-align: center;
+    background: #06c755;
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+  }
+
+  .btn-line:hover {
+    opacity: 0.9;
+  }
+
+  /* CTA Box */
+  .news-cta-box {
+    background: linear-gradient(135deg, #fff 0%, #fff8f0 100%);
+    border: 2px solid var(--accent-gold, #d4af37);
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+  }
+
+  .news-cta-box h3 {
+    font-size: clamp(20px, 3vw, 24px);
+    color: var(--secondary-red, #8b0000);
+    margin: 0 0 12px;
+  }
+
+  .news-cta-box p {
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto 25px;
+    font-size: 15px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-phone-btn {
+    background: var(--primary-red, #c8102e);
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+  }
+
+  .cta-phone-btn:hover {
+    background: var(--secondary-red, #8b0000);
+    transform: translateY(-2px);
+  }
+
+  .cta-line-btn {
+    background: #06c755;
+    color: white;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
+  }
+
+  .cta-line-btn:hover {
+    background: #05b04c;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .news-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
