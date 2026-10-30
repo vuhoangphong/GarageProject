@@ -1,296 +1,512 @@
+---
+// Services Component
+---
+
 <section class="services" id="services" itemscope itemtype="https://schema.org/AutoRepair">
-  <div class="section-header">
-    <h2 class="section-title">
-      <span class="title-decoration">━</span>
-      <span class="langService" data-ja="主なサービス" data-vn="Dịch vụ chính">主なサービス</span>
-      <span class="title-decoration">━</span>
-    </h2>
-    <p class="section-subtitle langService" data-ja="お客様のお車を丁寧にサポートいたします" data-vn="Chúng tôi hỗ trợ xe của quý khách một cách tận tâm">
-      お客様のお車を丁寧にサポートいたします
-    </p>
-  </div>
-  
-  <div class="service-items">
-    <a href="/services/inspection" class="service-link">
-      <article class="service-item" itemscope itemtype="https://schema.org/Service">
-        <div class="service-icon">🚗</div>
-        <div class="service-image">
-          <img src="https://www.hayataro.com/upload/save/post/beaabf80a597240516a905789347644c.jpg" 
-               alt="車検サービス - 法定点検と整備" 
-               itemprop="image" />
-        </div>
-        <div class="service-content">
-          <h3 class="service-title langService" data-ja="車検・点検" data-vn="Bảo Dưỡng" itemprop="name">車検・点検</h3>
-          <p class="service-description langService" 
-             data-ja="法定車検から定期点検まで、安全で確実な整備を行います。"
-             data-vn="Từ đăng kiểm định kỳ đến bảo dưỡng thường xuyên, chúng tôi thực hiện bảo trì an toàn và đáng tin cậy.">
-            法定車検から定期点検まで、安全で確実な整備を行います。
-          </p>
-          <div class="service-features">
-            <span class="feature langService" data-ja="法定車検" data-vn="Đăng kiểm định kỳ">法定車検</span>
-            <span class="feature langService" data-ja="定期点検" data-vn="Kiểm tra định kỳ">定期点検</span>
-          </div>
-          <div class="learn-more">
-            <span class="langService" data-ja="詳しく見る →" data-vn="Xem chi tiết →">詳しく見る →</span>
-          </div>
-          <meta itemprop="description" content="法定車検と定期点検サービス" />
-        </div>
-      </article>
-    </a>
+  <div class="services-container">
+    <div class="section-header">
+      <h2 class="section-title">
+        <span class="title-decoration">━</span>
+        <span class="langService" data-ja="主なサービス" data-vn="Dịch vụ chính">主なサービス</span>
+        <span class="title-decoration">━</span>
+      </h2>
+      <p class="section-subtitle langService" data-ja="熟練の技術と専用設備でお客様の愛車をトータルサポート" data-vn="Đội ngũ kỹ thuật lành nghề cùng trang thiết bị hiện đại chăm sóc toàn diện cho xe của bạn">
+        熟練の技術と専用設備でお客様の愛車をトータルサポート
+      </p>
+    </div>
     
-    <a href="/services/repair" class="service-link">
-      <article class="service-item" itemscope itemtype="https://schema.org/Service">
-        <div class="service-icon">🔧</div>
-        <div class="service-image">
-          <img src="/news/hiace.jpg" 
-               alt="鈑金サービス - 車体修理と復元" 
-               itemprop="image" />
-        </div>
-        <div class="service-content">
-          <h3 class="service-title langService" data-ja="鈑金・修理" data-vn="Sửa chữa thân xe" itemprop="name">鈑金・修理</h3>
-          <p class="service-description langService" 
-             data-ja="事故車両の修理から小さな傷まで、熟練の技術で丁寧に修復します。"
-             data-vn="Từ sửa chữa xe tai nạn đến những vết trầy xước nhỏ, chúng tôi khôi phục cẩn thận bằng kỹ thuật thành thạo.">
-            事故車両の修理から小さな傷まで、熟練の技術で丁寧に修復します。
-          </p>
-          <div class="service-features">
-            <span class="feature langService" data-ja="事故修理" data-vn="Sửa tai nạn">事故修理</span>
-            <span class="feature langService" data-ja="傷補修" data-vn="Sửa vết trầy">傷補修</span>
+    <div class="service-items">
+      <!-- Service 1: Inspection -->
+      <a href="/services/inspection" class="service-link">
+        <article class="service-item" itemscope itemtype="https://schema.org/Service">
+          <div class="service-image-wrap">
+            <img src="/services/inspection.jpg" 
+                 alt="車検・点検サービス - 法定点検と安心整備" 
+                 itemprop="image" 
+                 loading="lazy" />
+            <div class="service-badge-pill">
+              <span class="badge-step">01</span>
+              <span class="badge-text langService" data-ja="車検・点検" data-vn="Bảo dưỡng & Đăng kiểm">車検・点検</span>
+            </div>
+            <div class="service-icon-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
+                <circle cx="7" cy="17" r="2"/>
+                <path d="M9 17h6"/>
+                <circle cx="17" cy="17" r="2"/>
+                <path d="m9 11 2 2 4-4"/>
+              </svg>
+            </div>
           </div>
-          <div class="learn-more">
-            <span class="langService" data-ja="詳しく見る →" data-vn="Xem chi tiết →">詳しく見る →</span>
+          
+          <div class="service-content">
+            <div class="service-heading">
+              <h3 class="service-title langService" data-ja="車検・点検" data-vn="Bảo Dưỡng & Đăng Kiểm" itemprop="name">車検・点検</h3>
+              <span class="service-en-sub">INSPECTION & MAINTENANCE</span>
+            </div>
+            
+            <p class="service-description langService" 
+               data-ja="法定車検から定期点検まで、国家基準に適合した安心・確実な整備を実施いたします。"
+               data-vn="Từ đăng kiểm định kỳ đến bảo dưỡng toàn diện, chúng tôi thực hiện an toàn theo tiêu chuẩn Nhật Bản.">
+              法定車検から定期点検まで、国家基準に適合した安心・確実な整備を実施いたします。
+            </p>
+            
+            <div class="service-features">
+              <span class="feature langService" data-ja="法定車検" data-vn="Đăng kiểm định kỳ">法定車検</span>
+              <span class="feature langService" data-ja="定期点検" data-vn="Bảo dưỡng định kỳ">定期点検</span>
+              <span class="feature langService" data-ja="事前見積無料" data-vn="Báo giá miễn phí">事前見積無料</span>
+            </div>
+            
+            <div class="service-cta">
+              <span class="cta-label langService" data-ja="詳しく見る" data-vn="Xem chi tiết dịch vụ">詳しく見る</span>
+              <span class="cta-arrow">➜</span>
+            </div>
+            <meta itemprop="description" content="法定車検と定期点検サービス" />
           </div>
-          <meta itemprop="description" content="車体の損傷修理と形状復元" />
-        </div>
-      </article>
-    </a>
-    
-    <a href="/services/painting" class="service-link">
-      <article class="service-item" itemscope itemtype="https://schema.org/Service">
-        <div class="service-icon">🎨</div>
-        <div class="service-image">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPG_v2lKnET2pMaYaVzL4VriZ880pHPjNYIg&s" 
-               alt="塗装サービス - 車体塗装と仕上げ" 
-               itemprop="image" />
-        </div>
-        <div class="service-content">
-          <h3 class="service-title langService" data-ja="塗装・美装" data-vn="Sơn xe" itemprop="name">塗装・美装</h3>
-          <p class="service-description langService" 
-             data-ja="高品質な塗装技術で、お車を美しく仕上げます。"
-             data-vn="Với công nghệ sơn chất lượng cao, chúng tôi hoàn thiện xe của bạn một cách đẹp mắt.">
-            高品質な塗装技術で、お車を美しく仕上げます。
-          </p>
-          <div class="service-features">
-            <span class="feature langService" data-ja="全塗装" data-vn="Sơn toàn bộ">全塗装</span>
-            <span class="feature langService" data-ja="部分塗装" data-vn="Sơn từng phần">部分塗装</span>
+        </article>
+      </a>
+      
+      <!-- Service 2: Body Repair -->
+      <a href="/services/repair" class="service-link">
+        <article class="service-item" itemscope itemtype="https://schema.org/Service">
+          <div class="service-image-wrap">
+            <img src="/services/repair.jpg" 
+                 alt="鈑金・修理サービス - 車体修復と面出し成形" 
+                 itemprop="image" 
+                 loading="lazy" />
+            <div class="service-badge-pill">
+              <span class="badge-step">02</span>
+              <span class="badge-text langService" data-ja="鈑金・修理" data-vn="Đồng sơn & Gò nắn">鈑金・修理</span>
+            </div>
+            <div class="service-icon-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
           </div>
-          <div class="learn-more">
-            <span class="langService" data-ja="詳しく見る →" data-vn="Xem chi tiết →">詳しく見る →</span>
+          
+          <div class="service-content">
+            <div class="service-heading">
+              <h3 class="service-title langService" data-ja="鈑金・修理" data-vn="Sửa Chữa Thân Xe & Gò Nắn" itemprop="name">鈑金・修理</h3>
+              <span class="service-en-sub">BODY REPAIR & RESTORATION</span>
+            </div>
+            
+            <p class="service-description langService" 
+               data-ja="事故車両の大破修復から小さな擦り傷・へこみまで、熟練の職人技で元通りに復元します。"
+               data-vn="Từ phục hồi xe va chạm nặng đến xử lý vết trầy móp nhỏ, kỹ thuật viên giàu kinh nghiệm gò nắn phẳng chuẩn zin.">
+              事故車両の大破修復から小さな擦り傷・へこみまで、熟練の職人技で元通りに復元します。
+            </p>
+            
+            <div class="service-features">
+              <span class="feature langService" data-ja="事故修理" data-vn="Phục hồi tai nạn">事故修理</span>
+              <span class="feature langService" data-ja="キズ・へこみ" data-vn="Vết móp & trầy xước">キズ・へこみ</span>
+              <span class="feature langService" data-ja="精密フレーム修正" data-vn="Kéo nắn khung sườn">精密フレーム修正</span>
+            </div>
+            
+            <div class="service-cta">
+              <span class="cta-label langService" data-ja="詳しく見る" data-vn="Xem chi tiết dịch vụ">詳しく見る</span>
+              <span class="cta-arrow">➜</span>
+            </div>
+            <meta itemprop="description" content="車体の損傷修理と形状復元" />
           </div>
-          <meta itemprop="description" content="車体塗装と美装仕上げサービス" />
-        </div>
-      </article>
-    </a>
+        </article>
+      </a>
+      
+      <!-- Service 3: Painting -->
+      <a href="/services/painting" class="service-link">
+        <article class="service-item" itemscope itemtype="https://schema.org/Service">
+          <div class="service-image-wrap">
+            <img src="/services/painting.jpg" 
+                 alt="塗装・美装サービス - 専用ブース調色・焼付塗装" 
+                 itemprop="image" 
+                 loading="lazy" />
+            <div class="service-badge-pill">
+              <span class="badge-step">03</span>
+              <span class="badge-text langService" data-ja="塗装・美装" data-vn="Sơn xe & Phục hồi">塗装・美装</span>
+            </div>
+            <div class="service-icon-bubble" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.563-2.512 5.563-5.563C22 6.5 17.5 2 12 2z"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="service-content">
+            <div class="service-heading">
+              <h3 class="service-title langService" data-ja="塗装・美装" data-vn="Sơn Xe & Hoàn Thiện Thẩm Mỹ" itemprop="name">塗装・美装</h3>
+              <span class="service-en-sub">AUTOMOTIVE PAINT & FINISH</span>
+            </div>
+            
+            <p class="service-description langService" 
+               data-ja="高品質塗料と精密な調色技術により、新車時同様の深みある艶と耐久性を再現いたします。"
+               data-vn="Pha màu vi tính chuẩn xác, sơn sấy hấp tiêu chuẩn giúp màu sơn bóng đẹp, bền bỉ như xe mới xuất xưởng.">
+              高品質塗料と精密な調色技術により、新車時同様の深みある艶と耐久性を再現いたします。
+            </p>
+            
+            <div class="service-features">
+              <span class="feature langService" data-ja="全塗装" data-vn="Sơn đổi màu / Toàn bộ">全塗装</span>
+              <span class="feature langService" data-ja="部分補修塗装" data-vn="Sơn dặm vá">部分補修塗装</span>
+              <span class="feature langService" data-ja="高耐久クリア仕上げ" data-vn="Phủ bóng cao cấp">高耐久クリア仕上げ</span>
+            </div>
+            
+            <div class="service-cta">
+              <span class="cta-label langService" data-ja="詳しく見る" data-vn="Xem chi tiết dịch vụ">詳しく見る</span>
+              <span class="cta-arrow">➜</span>
+            </div>
+            <meta itemprop="description" content="車体塗装と美装仕上げサービス" />
+          </div>
+        </article>
+      </a>
+    </div>
   </div>
 </section>
 
 <style>
 .services {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+  scroll-margin-top: 85px;
+  padding: 80px 20px 85px;
+  background: linear-gradient(180deg, #fbfbfb 0%, #f4f5f7 100%);
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .section-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  font-size: clamp(24px, 4vw, 32px);
-  color: var(--dark-gray);
-  margin-bottom: 15px;
+  gap: 16px;
+  font-size: clamp(22px, 4vw, 32px);
+  color: var(--dark-gray, #2c2c2c);
+  margin-bottom: 14px;
+  font-family: 'Noto Serif JP', serif;
+  letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .title-decoration {
-  color: var(--primary-red);
+  color: var(--primary-red, #c8102e);
   font-weight: 300;
 }
 
 .section-subtitle {
   color: #666;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
+/* Service Grid: 3 Equal Columns on Desktop */
 .service-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .service-link {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  height: 100%;
 }
 
 .service-item {
   background: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: all 0.4s ease;
-  position: relative;
-  border: 1px solid #f0f0f0;
-  height: 100%;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ebecee;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .service-link:hover .service-item {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-color: #d4af37;
 }
 
-.service-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  background: white;
-  padding: 8px;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 2;
-}
-
-.service-image {
+/* Image Wrap */
+.service-image-wrap {
   height: 200px;
   overflow: hidden;
   position: relative;
+  background: #eee;
 }
 
-.service-image img {
+.service-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
+  display: block;
 }
 
-.service-link:hover .service-image img {
-  transform: scale(1.05);
+.service-link:hover .service-image-wrap img {
+  transform: scale(1.06);
 }
 
+/* Step Badge */
+.service-badge-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(18, 18, 18, 0.78);
+  backdrop-filter: blur(8px);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.badge-step {
+  color: var(--accent-gold, #d4af37);
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+/* Icon Bubble */
+.service-icon-bubble {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-red, #c8102e);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.service-link:hover .service-icon-bubble {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--primary-red, #c8102e);
+  color: white;
+}
+
+/* Card Content */
 .service-content {
-  padding: 25px;
+  padding: 24px 22px 20px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+}
+
+.service-heading {
+  margin-bottom: 12px;
 }
 
 .service-title {
   font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--dark-gray);
+  font-weight: 700;
+  margin: 0 0 3px;
+  color: var(--dark-gray, #2c2c2c);
+  font-family: 'Noto Serif JP', serif;
+}
+
+.service-en-sub {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--primary-red, #c8102e);
+  letter-spacing: 0.08em;
+  display: block;
 }
 
 .service-description {
-  color: #666;
+  color: #555;
   line-height: 1.7;
-  margin-bottom: 20px;
-  font-size: 14px;
+  margin: 0 0 18px;
+  font-size: 13.5px;
   flex-grow: 1;
 }
 
+/* Feature Pills */
 .service-features {
   display: flex;
-  gap: 8px;
+  gap: 7px;
   flex-wrap: wrap;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .feature {
-  background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
-  color: white;
-  padding: 4px 12px;
-  border-radius: 15px;
-  font-size: 12px;
+  background: #fdf2f4;
+  color: #b71c1c;
+  border: 1px solid #ffd8dc;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11.5px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-.learn-more {
-  text-align: right;
+/* CTA Footer Link */
+.service-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8f9fa;
+  border: 1px solid #eef0f3;
+  padding: 10px 16px;
+  border-radius: 10px;
   margin-top: auto;
+  transition: all 0.3s ease;
 }
 
-.learn-more span {
-  color: var(--primary-red);
+.cta-label {
+  font-size: 13px;
   font-weight: 600;
-  font-size: 14px;
-  transition: color 0.3s ease;
+  color: #333;
 }
 
-.service-link:hover .learn-more span {
-  color: var(--secondary-red);
+.cta-arrow {
+  color: var(--primary-red, #c8102e);
+  font-size: 13px;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 768px) {
+.service-link:hover .service-cta {
+  background: var(--primary-red, #c8102e);
+  border-color: var(--primary-red, #c8102e);
+}
+
+.service-link:hover .cta-label {
+  color: white;
+}
+
+.service-link:hover .cta-arrow {
+  color: white;
+  transform: translateX(4px);
+}
+
+/* Tablet adjustments */
+@media (max-width: 960px) and (min-width: 681px) {
   .service-items {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 0 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
   
-  .service-item {
-    font-size: 14px;
-  }
-  
-  .service-image {
-    height: 140px;
+  .service-image-wrap {
+    height: 160px;
   }
   
   .service-content {
-    padding: 15px;
+    padding: 18px 14px;
   }
   
   .service-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 17px;
   }
   
   .service-description {
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  
-  .service-features {
-    margin-bottom: 10px;
+    font-size: 12.5px;
   }
   
   .feature {
-    font-size: 10px;
-    padding: 3px 8px;
+    font-size: 10.5px;
+    padding: 2px 7px;
+  }
+}
+
+/* Mobile: Single Column Hero Card Stack */
+@media (max-width: 680px) {
+  .services {
+    scroll-margin-top: 75px;
+    padding: 50px 14px 60px;
   }
   
-  .learn-more span {
-    font-size: 12px;
+  .section-header {
+    margin-bottom: 35px;
   }
   
-  .service-icon {
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
-    padding: 6px;
+  .section-title {
+    font-size: 21px;
+    gap: 10px;
+  }
+  
+  .title-decoration {
+    display: none;
+  }
+  
+  .section-subtitle {
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 0 4px;
+  }
+  
+  .service-items {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  
+  .service-item {
+    border-radius: 14px;
+  }
+  
+  .service-image-wrap {
+    height: 190px;
+  }
+  
+  .service-content {
+    padding: 20px 18px 16px;
+  }
+  
+  .service-title {
+    font-size: 19px;
+  }
+  
+  .service-description {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  
+  .service-features {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  
+  .feature {
+    font-size: 11px;
+    padding: 3px 9px;
+  }
+  
+  .service-cta {
+    padding: 11px 16px;
   }
 }
 </style>
