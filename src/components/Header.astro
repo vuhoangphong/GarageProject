@@ -164,6 +164,16 @@ nav {
 }
 
 @media (max-width: 768px) {
+  header {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    will-change: transform;
+  }
+
+  header.header-hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
+  }
+
   .mobile-menu {
     display: block;
   }
@@ -309,4 +319,55 @@ nav {
       mobileToggle.textContent = "☰";
     }
   });
+
+  // Smart auto-hide / show header on scroll for mobile
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const headerEl = document.querySelector('header');
+        const isMobile = window.innerWidth <= 768;
+
+        if (!headerEl) {
+          ticking = false;
+          return;
+        }
+
+        // Only on mobile screens
+        if (!isMobile) {
+          headerEl.classList.remove('header-hidden');
+          lastScrollY = currentScrollY;
+          ticking = false;
+          return;
+        }
+
+        // If mobile menu drawer is open, keep header visible
+        if (navigation && navigation.classList.contains('mobile-open')) {
+          headerEl.classList.remove('header-hidden');
+          lastScrollY = currentScrollY;
+          ticking = false;
+          return;
+        }
+
+        // Near top of page, always show header
+        if (currentScrollY <= 30) {
+          headerEl.classList.remove('header-hidden');
+        } else if (currentScrollY > lastScrollY && (currentScrollY - lastScrollY > 8)) {
+          // Scrolling down: hide header
+          headerEl.classList.add('header-hidden');
+        } else if (currentScrollY < lastScrollY && (lastScrollY - currentScrollY > 8)) {
+          // Scrolling up: show header
+          headerEl.classList.remove('header-hidden');
+        }
+
+        lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
 </script>

@@ -395,6 +395,18 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   header {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease !important;
+    will-change: transform;
+  }
+  
+  header.header-hidden {
+    transform: translateY(-100%) !important;
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
     padding: 10px 15px;
     flex-wrap: wrap;
     justify-content: space-between;
