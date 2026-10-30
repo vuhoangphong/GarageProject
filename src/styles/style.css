@@ -515,6 +515,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+section[id], .section[id] {
+  scroll-margin-top: 85px;
+}
 button:focus,
 a:focus {
   outline: 2px solid var(--accent-gold);
