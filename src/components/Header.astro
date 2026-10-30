@@ -321,53 +321,74 @@ nav {
   });
 
   // Smart auto-hide / show header on scroll for mobile
-  let lastScrollY = window.scrollY;
-  let ticking = false;
+  let lastScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+  let touchStartY = 0;
 
+  function updateHeaderVisibility(newScrollY) {
+    const headerEl = document.querySelector('header');
+    const isMobile = window.innerWidth <= 768;
+
+    if (!headerEl || !isMobile) return;
+
+    // If mobile menu is open, always keep header visible
+    if (navigation && navigation.classList.contains('mobile-open')) {
+      headerEl.classList.remove('header-hidden');
+      lastScrollY = newScrollY;
+      return;
+    }
+
+    // Near the top of the page, always show header
+    if (newScrollY <= 40) {
+      headerEl.classList.remove('header-hidden');
+      lastScrollY = newScrollY;
+      return;
+    }
+
+    const delta = newScrollY - lastScrollY;
+
+    // Scrolling down: hide header
+    if (delta > 6) {
+      headerEl.classList.add('header-hidden');
+      lastScrollY = newScrollY;
+    } 
+    // Scrolling up: SHOW header immediately!
+    else if (delta < -2) {
+      headerEl.classList.remove('header-hidden');
+      lastScrollY = newScrollY;
+    }
+  }
+
+  // Native scroll event
   window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        const headerEl = document.querySelector('header');
-        const isMobile = window.innerWidth <= 768;
+    const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    updateHeaderVisibility(currentScrollY);
+  }, { passive: true });
 
-        if (!headerEl) {
-          ticking = false;
-          return;
-        }
-
-        // Only on mobile screens
-        if (!isMobile) {
-          headerEl.classList.remove('header-hidden');
-          lastScrollY = currentScrollY;
-          ticking = false;
-          return;
-        }
-
-        // If mobile menu drawer is open, keep header visible
-        if (navigation && navigation.classList.contains('mobile-open')) {
-          headerEl.classList.remove('header-hidden');
-          lastScrollY = currentScrollY;
-          ticking = false;
-          return;
-        }
-
-        // Near top of page, always show header
-        if (currentScrollY <= 30) {
-          headerEl.classList.remove('header-hidden');
-        } else if (currentScrollY > lastScrollY && (currentScrollY - lastScrollY > 8)) {
-          // Scrolling down: hide header
-          headerEl.classList.add('header-hidden');
-        } else if (currentScrollY < lastScrollY && (lastScrollY - currentScrollY > 8)) {
-          // Scrolling up: show header
-          headerEl.classList.remove('header-hidden');
-        }
-
-        lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
-        ticking = false;
-      });
-      ticking = true;
+  // Touch gesture listener for instant mobile response
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches && e.touches[0]) {
+      touchStartY = e.touches[0].clientY;
     }
   }, { passive: true });
 
+  window.addEventListener('touchmove', (e) => {
+    if (!e.touches || !e.touches[0]) return;
+    const currentTouchY = e.touches[0].clientY;
+    const touchDelta = currentTouchY - touchStartY;
+    const headerEl = document.querySelector('header');
+    const isMobile = window.innerWidth <= 768;
+
+    if (!headerEl || !isMobile) return;
+
+    // If user swipes finger down (scrolls UP towards top) -> SHOW header immediately!
+    if (touchDelta > 8) {
+      headerEl.classList.remove('header-hidden');
+    }
+    // If user swipes finger up (scrolls DOWN) -> HIDE header
+    else if (touchDelta < -10 && (window.pageYOffset || document.documentElement.scrollTop) > 50) {
+      if (navigation && !navigation.classList.contains('mobile-open')) {
+        headerEl.classList.add('header-hidden');
+      }
+    }
+  }, { passive: true });
 </script>
