@@ -34,7 +34,7 @@ import newsList from "../data/news.json";
       </div>
 
       <div class="home-news-grid">
-        {newsList.slice(0, 3).map((item) => (
+        {newsList.slice(0, 6).map((item) => (
           <article class="home-news-card">
             <div class="home-card-img">
               <img src={item.image} alt={item.title.ja} loading="lazy" />
