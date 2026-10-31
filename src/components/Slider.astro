@@ -1,43 +1,199 @@
+---
+// Slider.astro - Phuong Car of Kyoto Hero Banner
+---
+
 <section class="banner" id="home">
-  <div class="slides">
-    <img src="/news/banner_before_after.png" alt="京都のフォンカー - 車体修復 Before & After 施工実績" class="slide active" />
-    <img src="/news/hiace.jpg" alt="ハイエースの板金塗装・修理工程" class="slide" />
-    <img src="/news/post1_3.jpg" alt="板金修理・丁寧な下地と高品質塗装" class="slide" />
-    <img src="/news/post4_restoration.jpg" alt="愛車の全面修復・ピカピカの仕上がり" class="slide" />
+  <!-- Slides Container -->
+  <div class="slides" id="sliderContainer">
+    <!-- Slide 1: Before & After Thực tế phục hồi xe -->
+    <img 
+      src="/news/banner_before_after.png" 
+      alt="京都のフォンカー - 車体修復 Before & After 施工実績" 
+      class="slide active" 
+      loading="eager"
+    />
+    <!-- Slide 2: Xe SUV hoàn thiện sau đồng sơn bóng loáng trong xưởng (16:9) -->
+    <img 
+      src="/news/yt_suv8man_orr_k.jpg" 
+      alt="SUV・乗用車の本格板金塗装・キズへこみ修理" 
+      class="slide slide-pos-center" 
+      loading="lazy"
+    />
+    <!-- Slide 3: Nước sơn bóng gương hoàn thiện sấy nhiệt (16:9) -->
+    <img 
+      src="/news/yt_finish_UolUA.jpg" 
+      alt="自社ブース完備・鏡面焼き付けクリア塗装仕上げ" 
+      class="slide slide-pos-center" 
+      loading="lazy"
+    />
+    <!-- Slide 4: Phục hồi xe toàn diện sáng như mới xuất xưởng -->
+    <img 
+      src="/news/post4_restoration.jpg" 
+      alt="愛車の全面修復・ディーラー同等品質の仕上がり" 
+      class="slide slide-pos-center" 
+      loading="lazy"
+    />
+    <!-- Slide 5: Nắp capo bóng gương hoàn hảo (16:9) -->
+    <img 
+      src="/news/yt_bonnet_caFRb.jpg" 
+      alt="ボンネット・外板パネルの歪み取り＆精密塗装" 
+      class="slide" 
+      loading="lazy"
+    />
   </div>
-  <div class="banner-text">
-    <h1 class="lang" data-ja="京都のフォンカー" data-vn="京都のフォンカー - Phuong Car">
-      京都のフォンカー
+
+  <!-- Elegant Vignette & Gradient Mask -->
+  <div class="banner-overlay"></div>
+
+  <!-- Hero Content Area -->
+  <div class="banner-content">
+    <!-- Trust Badge -->
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span class="lang" data-ja="京都伏見・自社ブース完備 自動車板金塗装プロショップ" data-vn="Xưởng Đồng Sơn & Phục Hồi Ô Tô Fushimi, Kyoto">
+        京都伏見・自社ブース完備 自動車板金塗装プロショップ
+      </span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="hero-title">
+      <span class="hero-title-main">京都のフォンカー</span>
     </h1>
-    <p class="banner-sub lang" data-ja="自動車板金塗装・修理・車検 | Phuong Car of Kyoto" data-vn="Chuyên gia đồng sơn Nhật Bản - Japanese Auto Body Experts">
-      自動車板金塗装・修理・車検 | Phuong Car of Kyoto
+
+    <!-- Subtitle / Core Services -->
+    <p class="hero-subtitle lang" data-ja="自動車板金塗装・キズへこみ修理・車検整備・中古車販売" data-vn="Đồng Sơn Ô Tô Chuẩn Hãng • Sửa Chữa Móp Méo • Đăng Kiểm • Mua Bán Xe">
+      自動車板金塗装・キズへこみ修理・車検整備・中古車販売
     </p>
+
+    <!-- Key Advantages List -->
+    <ul class="hero-features">
+      <li>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="lang" data-ja="自社塗装ブース完備" data-vn="Buồng sơn sấy hiện đại">自社塗装ブース完備</span>
+      </li>
+      <li>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="lang" data-ja="職人直営・適正価格" data-vn="Chuẩn hãng - Giá tốt nhất">職人直営・適正価格</span>
+      </li>
+      <li>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span class="lang" data-ja="日越バイリンガル対応" data-vn="Tư vấn Nhật - Việt tận tâm">日越バイリンガル対応</span>
+      </li>
+    </ul>
+
+    <!-- Quick Action CTAs -->
+    <div class="hero-actions">
+      <a href="tel:0756065228" class="hero-btn hero-btn-tel" title="お電話でのお問い合わせ">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <span>075-606-5228</span>
+      </a>
+      <a href="https://line.me/ti/p/nXJpbtsfDY" target="_blank" rel="noopener" class="hero-btn hero-btn-line" title="LINEで無料写真見積り">
+        <svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FFFFFF" d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314Z"/><path fill="#06C755" d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629z"/></svg>
+        <span class="lang" data-ja="LINEで無料写真見積り" data-vn="Báo giá ảnh qua LINE">LINEで無料写真見積り</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Navigation Arrows -->
+  <button type="button" class="slider-arrow prev" id="sliderPrev" aria-label="前の写真">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+  </button>
+  <button type="button" class="slider-arrow next" id="sliderNext" aria-label="次の写真">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+
+  <!-- Slide Indicators (Dots) -->
+  <div class="slider-dots" id="sliderDots">
+    <button type="button" class="slider-dot active" data-index="0" aria-label="スライド 1"></button>
+    <button type="button" class="slider-dot" data-index="1" aria-label="スライド 2"></button>
+    <button type="button" class="slider-dot" data-index="2" aria-label="スライド 3"></button>
+    <button type="button" class="slider-dot" data-index="3" aria-label="スライド 4"></button>
+    <button type="button" class="slider-dot" data-index="4" aria-label="スライド 5"></button>
   </div>
 </section>
 
-<style>
-  .banner-sub {
-    font-size: clamp(14px, 2.5vw, 20px);
-    margin-top: 8px;
-    color: #f5e6b3;
-    background: rgba(0,0,0,0.4);
-    padding: 6px 16px;
-    border-radius: 4px;
-    display: inline-block;
-    backdrop-filter: blur(2px);
-    font-weight: 500;
-  }
-</style>
-
 <script>
   let slides = document.querySelectorAll(".slide");
+  let dots = document.querySelectorAll(".slider-dot");
+  let prevBtn = document.getElementById("sliderPrev");
+  let nextBtn = document.getElementById("sliderNext");
+  let banner = document.getElementById("home");
   let current = 0;
-  function showSlide(index){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[index].classList.add("active");
+  let timer: any = null;
+
+  function goToSlide(index: number) {
+    if (slides.length === 0) return;
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    current = index;
+    slides.forEach((s, i) => {
+      s.classList.toggle("active", i === current);
+    });
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === current);
+    });
   }
-  setInterval(() => {
-    current = (current + 1) % slides.length;
-    showSlide(current);
-  }, 3500);
+
+  function nextSlide() {
+    goToSlide(current + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(current - 1);
+  }
+
+  function startTimer() {
+    stopTimer();
+    timer = setInterval(nextSlide, 5000);
+  }
+
+  function stopTimer() {
+    if (timer) clearInterval(timer);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      startTimer();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      startTimer();
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      const idx = parseInt(dot.getAttribute("data-index") || "0", 10);
+      goToSlide(idx);
+      startTimer();
+    });
+  });
+
+  if (banner) {
+    banner.addEventListener("mouseenter", stopTimer);
+    banner.addEventListener("mouseleave", startTimer);
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    banner.addEventListener("touchstart", (e: any) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    banner.addEventListener("touchend", (e: any) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+        startTimer();
+      } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+        startTimer();
+      }
+    }, { passive: true });
+  }
+
+  startTimer();
 </script>
