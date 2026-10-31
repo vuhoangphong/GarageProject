@@ -153,22 +153,6 @@ import Footer from "../../components/Footer.astro";
   <Footer />
 </BaseLayout>
 
-<script>
-  // Apply saved language preference on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language');
-    const isVN = savedLang === 'vn';
-    
-    if (isVN) {
-      // Apply Vietnamese text to all elements with language data
-      document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
-        const vnText = el.getAttribute("data-vn");
-        if (vnText) el.textContent = vnText;
-      });
-    }
-  });
-</script>
-
 <style>
 .service-hero {
   display: grid;

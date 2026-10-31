@@ -227,26 +227,71 @@ nav {
   const mobileToggle = document.getElementById("mobileToggle");
   const navigation = document.getElementById("navigation");
   
-  // Get saved language preference or default to Japanese
-  let isJP = localStorage.getItem('language') !== 'vn';
+  // Smart language detector: URL query -> localStorage -> Browser/Device language -> Default (Japanese)
+  function detectLanguage(): 'jp' | 'vn' {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get('lang')?.toLowerCase();
+      if (p === 'vn' || p === 'vi') return 'vn';
+      if (p === 'ja' || p === 'jp') return 'jp';
+    } catch (e) {}
 
-  // Language toggle function
-  function switchLanguage() {
-    document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
-      const newText = isJP ? el.getAttribute("data-vn") : el.getAttribute("data-ja");
-      if (newText) el.textContent = newText;
-    });
-    
-    isJP = !isJP;
-    
-    // Save language preference
-    localStorage.setItem('language', isJP ? 'jp' : 'vn');
-    
-    // Update both mobile and desktop buttons
-    updateLanguageButtons();
+    try {
+      const saved = localStorage.getItem('language');
+      if (saved === 'vn' || saved === 'jp') return saved;
+    } catch (e) {}
+
+    try {
+      const navLangs = navigator.languages || [navigator.language || ''];
+      for (const lang of navLangs) {
+        const l = (lang || '').toLowerCase();
+        if (l.startsWith('vi') || l === 'vn') return 'vn';
+        if (l.startsWith('ja') || l === 'jp') return 'jp';
+      }
+    } catch (e) {}
+
+    return 'jp';
   }
 
-  // Update language buttons
+  let isJP = detectLanguage() !== 'vn';
+
+  // Apply language function
+  function applyLanguage(targetJP: boolean, saveToStorage: boolean = false) {
+    isJP = targetJP;
+    if (saveToStorage) {
+      try {
+        localStorage.setItem('language', isJP ? 'jp' : 'vn');
+      } catch (e) {}
+    }
+
+    // Translate all elements with data-ja / data-vn
+    document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
+      const newText = isJP ? el.getAttribute("data-ja") : el.getAttribute("data-vn");
+      if (newText) el.textContent = newText;
+    });
+
+    // Update contact info grid attribute if present on page
+    const contactGrid = document.querySelector('.contact-info-grid');
+    if (contactGrid) {
+      if (isJP) {
+        contactGrid.removeAttribute('data-lang');
+      } else {
+        contactGrid.setAttribute('data-lang', 'vn');
+      }
+    }
+
+    updateLanguageButtons();
+
+    // Broadcast languageChanged event for other components
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: isJP ? 'jp' : 'vn' }));
+  }
+
+  // Language toggle click
+  function switchLanguage() {
+    applyLanguage(!isJP, true);
+  }
+
+  // Update language buttons UI
   function updateLanguageButtons() {
     const flagSrc = isJP ? "/icon_Lang_Japan.png" : "/icon_Lang_VietNam.png";
     const newText = isJP ? "JP" : "VN";
@@ -264,20 +309,15 @@ nav {
     });
   }
 
-  // Apply saved language on page load
-  function applySavedLanguage() {
-    if (!isJP) {
-      // Switch to Vietnamese
-      document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
-        const vnText = el.getAttribute("data-vn");
-        if (vnText) el.textContent = vnText;
-      });
-    }
-    updateLanguageButtons();
+  // Initialize language on page load
+  function initLanguage() {
+    applyLanguage(isJP, false);
   }
 
-  // Initialize language on page load
-  document.addEventListener('DOMContentLoaded', applySavedLanguage);
+  document.addEventListener('DOMContentLoaded', initLanguage);
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    initLanguage();
+  }
 
   // Check if current page is a service page and add class to body
   if (window.location.pathname.includes('/services/')) {

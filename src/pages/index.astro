@@ -918,40 +918,25 @@ import newsList from "../data/news.json";
 </style>
 
 <script>
-  // Apply saved language preference on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('language');
-    const isVN = savedLang === 'vn';
-    const contactGrid = document.querySelector('.contact-info-grid');
-    
-    if (isVN) {
-      // Apply Vietnamese text to all elements with language data
-      document.querySelectorAll(".lang, .langHeaderSerive, .langService").forEach(el => {
-        const vnText = el.getAttribute("data-vn");
-        if (vnText) el.textContent = vnText;
-      });
-      
-      // Set Vietnamese attribute for mobile contact info
-      if (contactGrid) {
-        contactGrid.setAttribute('data-lang', 'vn');
-      }
-    } else {
-      // Remove Vietnamese attribute for Japanese/default
-      if (contactGrid) {
-        contactGrid.removeAttribute('data-lang');
-      }
-    }
-  });
-  
-  // Listen for language changes (if you have language toggle functionality)
-  document.addEventListener('languageChanged', (event) => {
+  function syncContactGrid(lang: string) {
     const contactGrid = document.querySelector('.contact-info-grid');
     if (contactGrid) {
-      if ((event as CustomEvent).detail === 'vn') {
+      if (lang === 'vn') {
         contactGrid.setAttribute('data-lang', 'vn');
       } else {
         contactGrid.removeAttribute('data-lang');
       }
     }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem('language');
+    if (saved) {
+      syncContactGrid(saved);
+    }
+  });
+  
+  document.addEventListener('languageChanged', (event) => {
+    syncContactGrid((event as CustomEvent).detail);
   });
 </script>
