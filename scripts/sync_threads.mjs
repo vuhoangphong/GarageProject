@@ -25,8 +25,21 @@ async function downloadImage(url, destPath) {
   }
 }
 
+// Function to extract genuine price if user explicitly wrote it in caption
+function extractGenuinePrice(text) {
+  if (!text) return "";
+  // Check patterns like: 5万で, 9万から, 4-5万から, 5万円, 3〜4万円
+  const match = text.match(/(\d+(?:[〜~-]\d+)?)\s*万(?:円)?\s*(から|で)?/);
+  if (match) {
+    const val = match[1];
+    const isFrom = match[2] === "から" || text.includes(`${val}万から`);
+    return `${val}万円${isFrom ? "〜" : ""}`;
+  }
+  return "";
+}
+
 async function syncThreads() {
-  console.log(`[Threads Sync] Fetching profile from ${JINA_ENDPOINT}...`);
+  console.log(`[Threads Sync] Fetching latest posts from ${JINA_ENDPOINT}...`);
   
   let existingNews = [];
   try {
@@ -50,7 +63,7 @@ async function syncThreads() {
     return;
   }
 
-  // Regex to detect posts: links like https://www.threads.com/@hfoncar0895/post/XXXX
+  // Detect post IDs: https://www.threads.com/@hfoncar0895/post/XXXX
   const postUrlRegex = /https:\/\/(?:www\.)?threads\.(?:com|net)\/@hfoncar0895\/post\/([a-zA-Z0-9_-]+)/g;
   const postIds = [];
   let match;
@@ -60,7 +73,7 @@ async function syncThreads() {
     }
   }
 
-  console.log(`[Threads Sync] Found ${postIds.length} unique post IDs on page.`);
+  console.log(`[Threads Sync] Found ${postIds.length} post IDs on profile view.`);
   let addedCount = 0;
 
   for (const pid of postIds) {
@@ -70,8 +83,7 @@ async function syncThreads() {
       continue;
     }
 
-    console.log(`[Threads Sync] New post detected: ${pid}`);
-    // Extract chunk around this post id
+    console.log(`[Threads Sync] New authentic post detected: ${pid}`);
     const pidIdx = markdown.indexOf(pid);
     const chunk = markdown.slice(pidIdx, pidIdx + 1500);
 
@@ -89,7 +101,7 @@ async function syncThreads() {
       }
     }
 
-    // Extract text snippet
+    // Extract raw text lines
     const lines = chunk
       .split("\n")
       .map((l) => l.trim())
@@ -100,25 +112,33 @@ async function syncThreads() {
       postText = "京都のフォンカー 熟練の板金塗装・キズへこみ修理の実績";
     }
 
+    // Extract price only if author explicitly wrote it
+    const genuinePrice = extractGenuinePrice(postText);
+
+    // Determine category based on keywords
+    const isPaintOnly = postText.includes("全塗装") || postText.includes("ルーフ塗装") || postText.includes("屋根");
+    const category = isPaintOnly
+      ? { ja: "塗装・美装", vn: "Sơn Xe & Phục Hồi" }
+      : { ja: "板金塗装・修理", vn: "Đồng Sơn & Sửa Chữa" };
+
+    const cleanTitleSnippet = postText.replace(/#[^\s]+/g, "").replace(/https?:\/\/[^\s]+/g, "").replace(/\d{3}-\d{4}-\d{4}/g, "").trim().slice(0, 45);
+
     const newItem = {
       id: `post-${pid}`,
       date: new Date().toISOString().split("T")[0],
       threadsUrl: canonicalUrl,
-      category: {
-        ja: "板金塗装・修理",
-        vn: "Đồng Sơn & Sửa Chữa"
-      },
-      price: "お見積り無料",
+      category,
+      price: genuinePrice, // Only genuine price or empty string, NEVER fabricated
       image: localImg,
       title: {
-        ja: `【施工実績】${postText.slice(0, 45)}`,
-        vn: `【Dự án thực tế】${postText.slice(0, 45)}`
+        ja: `【施工実績】${cleanTitleSnippet || "板金塗装・修理実績"}`,
+        vn: `【Dự án thực tế】${cleanTitleSnippet || "Đồng sơn & phục hồi xe tại xưởng"}`
       },
       content: {
-        ja: `${postText}。京都のフォンカーでは熟練の職人技で愛車を美しく修復いたします。お気軽にご相談ください。`,
-        vn: `${postText} - Quy trình phục hồi đồng sơn kỹ thuật cao tại xưởng Kyoto no Foncar. Liên hệ Hotline hoặc LINE để được tư vấn báo giá miễn phí!`
+        ja: postText,
+        vn: `${postText} - Hình ảnh thi công thực tế tại xưởng Kyoto no Foncar. Quý khách vui lòng liên hệ hotline hoặc LINE để được tư vấn!`
       },
-      tags: ["#京都フォンカー", "#板金塗装", "#キズへこみ修理", "#施工実績"]
+      tags: ["#京都フォンカー", "#フオンカー", "#板金塗装", "#施工実績"]
     };
 
     existingNews.unshift(newItem);
@@ -127,8 +147,8 @@ async function syncThreads() {
   }
 
   if (addedCount > 0) {
-    await fs.writeFile(NEWS_JSON_PATH, JSON.stringify(existingNews, null, 2), "utf-8");
-    console.log(`[Threads Sync] Successfully synced ${addedCount} new posts!`);
+    await fs.writeFile(NEWS_JSON_PATH, JSON.stringify(existingNews, null, 2) + "\n", "utf-8");
+    console.log(`[Threads Sync] Successfully synced ${addedCount} new authentic posts!`);
   } else {
     console.log("[Threads Sync] All posts are up to date. No new posts to add.");
   }
