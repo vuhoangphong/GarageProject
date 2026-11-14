@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const {
-  pageTitle = "京都のフォンカー / フオンカー (Foncar - Phuong Car of Kyoto) - 自動車板金塗装・修理・車検",
+  pageTitle = "フオンカー (Foncar) | 京都の自動車板金塗装・キズへこみ修理・車検【京都のフォンカー】",
   metaDescription = "京都のフォンカー（フオンカー / Foncar - Phuong Car of Kyoto）は京都の自動車板金塗装、車検、修理専門店です。熟練の技術でお客様の愛車を丁寧にサポートいたします。",
   metaKeywords = "フオンカー, フォンカー, Foncar, Phuong Car, 京都, 板金塗装, 鈑金, 塗装, 車検, 自動車修理, メンテナンス",
   socialImage = "https://garage-project-rose.vercel.app/social-preview.jpg",
@@ -90,14 +90,26 @@ const {
     <meta name="twitter:description" content={metaDescription} />
     <meta name="twitter:image" content={socialImage} />
     
-    <!-- Business Schema -->
+        <!-- Google Site Identity Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "フオンカー (Foncar)",
+      "alternateName": ["京都のフォンカー", "フオンカー", "Foncar", "Phuong Car of Kyoto"],
+      "url": "https://garage-project-rose.vercel.app/"
+    }
+    </script>
+
+    <!-- Business Schema with Google Review Rating -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AutoRepair",
-      "name": "京都のフォンカー (Phuong Car of Kyoto)",
-      "alternateName": ["フオンカー", "フォンカー", "Foncar", "Phuong Car"],
-      "description": "自動車修理、車検、鈑金、塗装サービス",
+      "name": "フオンカー / 京都のフォンカー (Foncar)",
+      "alternateName": ["フオンカー", "フォンカー", "Foncar", "Phuong Car of Kyoto"],
+      "description": "京都市南区の自動車板金塗装、キズへこみ修理、車検整備、中古車販売専門店。自社塗装ブース完備・職人直営・適正価格。",
+      "image": "https://garage-project-rose.vercel.app/news/banner_before_after.png",
       "url": "https://garage-project-rose.vercel.app/",
       "sameAs": [
         "https://www.facebook.com/Hfoncar/",
@@ -109,19 +121,26 @@ const {
       "email": "Hfoncar@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Kuseze Kamikuseze-cho 411-2",
-        "addressLocality": "Kyoto",
-        "addressRegion": "Kyoto",
+        "streetAddress": "久世上久世町411-2",
+        "addressLocality": "京都市南区",
+        "addressRegion": "京都府",
         "postalCode": "601-8212",
         "addressCountry": "JP"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "34.9568337",
-        "longitude": "135.73937337"
+        "latitude": "34.9631239",
+        "longitude": "135.7134296"
       },
-      "openingHours": "Mo-Fr 10:00-18:00",
-      "priceRange": "$$"
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "29",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "openingHours": "Mo-Sa 09:00-19:00",
+      "priceRange": "¥¥"
     }
     </script>
     
